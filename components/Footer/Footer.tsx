@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Twitter, Instagram, Linkedin, Send } from "lucide-react";
+import SocialMediaLinks from "@/components/SocialMediaLinks/SocialMediaLinks";
 
 export default function Footer() {
     return (
@@ -14,21 +14,8 @@ export default function Footer() {
                         <p className="text-gray-600 text-sm leading-relaxed">
                             Votre partenaire de confiance pour les livraisons et le transport. Nous connectons le monde, un colis à la fois.
                         </p>
-                        <div className="flex gap-4 pt-2">
-                            {[
-                                { name: 'Facebook', icon: Facebook, color: 'hover:text-blue-600' },
-                                { name: 'Twitter', icon: Twitter, color: 'hover:text-cyan-500' },
-                                { name: 'Instagram', icon: Instagram, color: 'hover:text-pink-600' },
-                                { name: 'LinkedIn', icon: Linkedin, color: 'hover:text-blue-700' }
-                            ].map((social) => (
-                                <a
-                                    key={social.name}
-                                    href="#"
-                                    className={`w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 ${social.color} hover:border-blue-200 transition-all shadow-sm hover:shadow-md`}
-                                >
-                                    <social.icon className="w-5 h-5" />
-                                </a>
-                            ))}
+                        <div className="pt-2">
+                            <SocialMediaLinks variant="compact" />
                         </div>
                     </div>
 
@@ -55,20 +42,15 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Newsletter Col */}
+                    {/* Quick Links Col */}
                     <div>
-                        <h3 className="font-bold text-slate-900 mb-4">Restez Informé</h3>
-                        <p className="text-sm text-gray-600 mb-4">Abonnez-vous pour les dernières nouvelles et offres.</p>
-                        <form className="flex gap-2">
-                            <input
-                                type="email"
-                                placeholder="Entrez votre email"
-                                className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-                            />
-                            <button className="p-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800">
-                                <Send className="w-4 h-4" />
-                            </button>
-                        </form>
+                        <h3 className="font-bold text-slate-900 mb-4">Liens Rapides</h3>
+                        <ul className="space-y-2 text-sm text-gray-600">
+                            <li><Link href="/download" className="hover:text-blue-600 transition-colors">📱 Télécharger l'App</Link></li>
+                            <li><Link href="/services" className="hover:text-blue-600 transition-colors">Nos Services</Link></li>
+                            <li><Link href="/about" className="hover:text-blue-600 transition-colors">Qui Sommes-Nous</Link></li>
+                            <li><Link href="/faq" className="hover:text-blue-600 transition-colors">Questions Fréquentes</Link></li>
+                        </ul>
                     </div>
                 </div>
 

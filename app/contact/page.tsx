@@ -1,7 +1,7 @@
-import ContactHero from "@/components/public/contact/ContactHero";
-import ContactInfo from "@/components/public/contact/ContactInfo";
-import ContactForm from "@/components/public/contact/ContactForm";
-import ContactMap from "@/components/public/contact/ContactMap";
+import ContactHero from "@/components/ContactHero/ContactHero";
+import ContactInfo from "@/components/ContactInfo/ContactInfo";
+import ContactForm from "@/components/ContactForm/ContactForm";
+import ContactMap from "@/components/ContactMap/ContactMap";
 
 export const metadata = {
     title: "Contactez-Nous - Sala",

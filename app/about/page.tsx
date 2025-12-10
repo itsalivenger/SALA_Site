@@ -1,8 +1,8 @@
-import AboutHero from "@/components/public/about/AboutHero";
-import MissionVision from "@/components/public/about/MissionVision";
-import Team from "@/components/public/about/Team";
-import OurStory from "@/components/public/about/OurStory";
-import CoreValues from "@/components/public/about/CoreValues";
+import AboutHero from "@/components/AboutHero/AboutHero";
+import MissionVision from "@/components/MissionVision/MissionVision";
+import Team from "@/components/Team/Team";
+import OurStory from "@/components/OurStory/OurStory";
+import CoreValues from "@/components/CoreValues/CoreValues";
 
 export const metadata = {
     title: "À Propos - Sala",

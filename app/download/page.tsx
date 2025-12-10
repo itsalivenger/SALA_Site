@@ -1,6 +1,6 @@
-import DownloadHero from "@/components/public/download/DownloadHero";
-import AppFeatures from "@/components/public/download/AppFeatures";
-import QRCodeSection from "@/components/public/download/QRCodeSection";
+import DownloadHero from "@/components/DownloadHero/DownloadHero";
+import AppFeatures from "@/components/AppFeatures/AppFeatures";
+import QRCodeSection from "@/components/QRCodeSection/QRCodeSection";
 
 export const metadata = {
     title: "Télécharger l'App - Sala",

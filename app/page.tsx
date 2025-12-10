@@ -1,10 +1,10 @@
-import Hero from "@/components/public/Hero";
-import ServicesPreview from "@/components/public/ServicesPreview";
-import HowItWorks from "@/components/public/HowItWorks";
-import Testimonials from "@/components/public/Testimonials";
-import Stats from "@/components/public/home/Stats";
-import Partners from "@/components/public/home/Partners";
-import AppShowcase from "@/components/public/home/AppShowcase";
+import Hero from "@/components/Hero/Hero";
+import ServicesPreview from "@/components/ServicesPreview/ServicesPreview";
+import HowItWorks from "@/components/HowItWorks/HowItWorks";
+import Testimonials from "@/components/Testimonials/Testimonials";
+import Stats from "@/components/Stats/Stats";
+import Partners from "@/components/Partners/Partners";
+import AppShowcase from "@/components/AppShowcase/AppShowcase";
 
 export default function Home() {
   return (

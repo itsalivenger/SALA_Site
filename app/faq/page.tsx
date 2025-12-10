@@ -1,5 +1,5 @@
-import FAQHero from "@/components/public/faq/FAQHero";
-import FAQList from "@/components/public/faq/FAQList";
+import FAQHero from "@/components/FaqHero/FAQHero";
+import FAQList from "@/components/FaqList/FAQList";
 
 export const metadata = {
     title: "FAQ - Sala",

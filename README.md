@@ -24,6 +24,40 @@ This project is built with **Next.js (App Router)** and **Tailwind CSS**.
 - **Management**: Users, Drivers, Orders, Products, Categories, Complaints.
 - **Settings**: System configuration and roles.
 
+## Component Structure
+
+**IMPORTANT**: Each component must be in its own folder for better readability and structure.
+
+### Structure Guidelines
+```
+components/
+  ├── ComponentName/
+  │   └── ComponentName.tsx
+  ├── AnotherComponent/
+  │   └── AnotherComponent.tsx
+  └── ...
+```
+
+### Example
+```
+components/
+  ├── Navbar/
+  │   └── Navbar.tsx
+  ├── Footer/
+  │   └── Footer.tsx
+  ├── Hero/
+  │   └── Hero.tsx
+  └── SocialMediaLinks/
+      └── SocialMediaLinks.tsx
+```
+
+### Import Pattern
+```tsx
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+import SocialMediaLinks from "@/components/SocialMediaLinks/SocialMediaLinks";
+```
+
 ## Tech Stack
 - **Framework**: Next.js 15+ (App Router)
 - **Styling**: Tailwind CSS
@@ -32,7 +66,7 @@ This project is built with **Next.js (App Router)** and **Tailwind CSS**.
 
 ## Getting Started
 
-1.  Ipmstall dependencies:
+1.  Install dependencies:
     ```bash
     npm install
     ```

@@ -1,4 +1,4 @@
-import LegalDocument from "@/components/public/legal/LegalDocument";
+import LegalDocument from "@/components/LegalDocument/LegalDocument";
 
 export const metadata = {
     title: "Politique de Confidentialité - Sala",

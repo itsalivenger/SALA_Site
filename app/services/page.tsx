@@ -1,7 +1,7 @@
-import ServicesList from "@/components/public/services/ServicesList";
-import ServiceCTA from "@/components/public/services/ServiceCTA";
-import BusinessSolutions from "@/components/public/services/BusinessSolutions";
-import ServiceProcess from "@/components/public/services/ServiceProcess";
+import ServicesList from "@/components/ServicesList/ServicesList";
+import ServiceCTA from "@/components/ServiceCTA/ServiceCTA";
+import BusinessSolutions from "@/components/BusinessSolutions/BusinessSolutions";
+import ServiceProcess from "@/components/ServiceProcess/ServiceProcess";
 
 export const metadata = {
     title: "Nos Services - Sala",

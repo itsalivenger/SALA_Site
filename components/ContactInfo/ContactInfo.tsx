@@ -1,6 +1,7 @@
 "use client";
 
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
+import SocialMediaLinks from "@/components/SocialMediaLinks/SocialMediaLinks";
 
 export default function ContactInfo() {
     return (
@@ -15,9 +16,9 @@ export default function ContactInfo() {
                     <div>
                         <h4 className="font-bold text-slate-900 mb-1">Notre Bureau</h4>
                         <p className="text-gray-600 leading-relaxed">
-                            123 Rue de la Logistique<br />
-                            Centre Ville, Alger<br />
-                            Algérie
+                            Boulevard Mohammed V<br />
+                            Centre Ville, Casablanca<br />
+                            Maroc 🇲🇦
                         </p>
                     </div>
                 </div>
@@ -29,7 +30,7 @@ export default function ContactInfo() {
                     <div>
                         <h4 className="font-bold text-slate-900 mb-1">Téléphone</h4>
                         <p className="text-gray-600">
-                            <span className="block mb-1">+213 555 123 456</span>
+                            <span className="block mb-1">+212 522 123 456</span>
                             <span className="text-sm text-gray-500">(Lun-Ven de 9h à 18h)</span>
                         </p>
                     </div>
@@ -42,31 +43,15 @@ export default function ContactInfo() {
                     <div>
                         <h4 className="font-bold text-slate-900 mb-1">Email</h4>
                         <p className="text-gray-600">
-                            contact@sala.dz<br />
-                            support@sala.dz
+                            contact@sala.ma<br />
+                            support@sala.ma
                         </p>
                     </div>
                 </div>
 
                 <div className="pt-8 border-t border-gray-200">
-                    <h4 className="font-bold text-slate-900 mb-4">Suivez-nous</h4>
-                    <div className="flex gap-4">
-                        {[
-                            { name: 'Facebook', icon: Facebook },
-                            { name: 'Instagram', icon: Instagram },
-                            { name: 'Twitter', icon: Twitter },
-                            { name: 'LinkedIn', icon: Linkedin }
-                        ].map((social) => (
-                            <a
-                                key={social.name}
-                                href="#"
-                                className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center text-gray-400 hover:text-blue-600 hover:border-blue-200 transition-all shadow-sm hover:shadow-md"
-                            >
-                                <span className="sr-only">{social.name}</span>
-                                <social.icon className="w-5 h-5" />
-                            </a>
-                        ))}
-                    </div>
+                    <h4 className="font-bold text-slate-900 mb-6">Suivez-nous</h4>
+                    <SocialMediaLinks />
                 </div>
             </div>
         </div>

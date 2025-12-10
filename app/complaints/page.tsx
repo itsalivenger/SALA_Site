@@ -1,5 +1,5 @@
-import ComplaintsHero from "@/components/public/complaints/ComplaintsHero";
-import ComplaintsForm from "@/components/public/complaints/ComplaintsForm";
+import ComplaintsHero from "@/components/ComplaintsHero/ComplaintsHero";
+import ComplaintsForm from "@/components/ComplaintsForm/ComplaintsForm";
 
 export const metadata = {
     title: "Réclamations - Sala",
