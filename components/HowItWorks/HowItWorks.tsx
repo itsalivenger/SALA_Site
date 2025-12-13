@@ -25,7 +25,7 @@ export default function HowItWorks() {
         <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
             {/* Background patterns */}
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                <div className="absolute right-0 top-0 w-96 h-96 bg-blue-500 rounded-full blur-[100px]" />
+                <div className="absolute right-0 top-0 w-96 h-96 bg-primary rounded-full blur-[100px]" />
                 <div className="absolute left-0 bottom-0 w-96 h-96 bg-indigo-500 rounded-full blur-[100px]" />
             </div>
 
@@ -48,7 +48,7 @@ export default function HowItWorks() {
                         <div key={index} className="text-center relative">
                             <div className="w-24 h-24 mx-auto bg-slate-800 rounded-full flex items-center justify-center border-4 border-slate-900 mb-6 shadow-xl relative z-10">
                                 <step.icon className="w-10 h-10 text-blue-400" />
-                                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-sm font-bold">
+                                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-sm font-bold">
                                     {index + 1}
                                 </div>
                             </div>

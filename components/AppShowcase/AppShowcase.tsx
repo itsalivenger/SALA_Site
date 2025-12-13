@@ -16,12 +16,12 @@ export default function AppShowcase() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-bold mb-6">
+                        <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold mb-6">
                             L'expérience Mobile
                         </div>
                         <h2 className="text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
                             Une interface conçue pour <br />
-                            <span className="text-blue-600">la simplicité</span>
+                            <span className="text-primary">la simplicité</span>
                         </h2>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                             Notre application a été pensée pour être intuitive et puissante.
@@ -35,7 +35,7 @@ export default function AppShowcase() {
                                 { icon: CreditCard, title: "Paiements fluides", text: "Payez en espèces ou par carte en toute sécurité." },
                             ].map((feature, idx) => (
                                 <div key={idx} className="flex gap-4">
-                                    <div className="w-12 h-12 rounded-xl bg-white border border-gray-100 flex items-center justify-center shadow-sm flex-shrink-0 text-blue-600">
+                                    <div className="w-12 h-12 rounded-xl bg-white border border-gray-100 flex items-center justify-center shadow-sm flex-shrink-0 text-primary">
                                         <feature.icon className="w-6 h-6" />
                                     </div>
                                     <div>
@@ -63,7 +63,7 @@ export default function AppShowcase() {
                             {/* Screen Content Placeholder */}
                             <div className="w-full h-full bg-slate-100 relative">
                                 {/* Header */}
-                                <div className="h-20 bg-blue-600 w-full" />
+                                <div className="h-20 bg-primary w-full" />
 
                                 {/* Map Placeholder */}
                                 <div className="h-64 bg-gray-200 m-4 rounded-2xl relative overflow-hidden">
@@ -73,9 +73,9 @@ export default function AppShowcase() {
                                         ))}
                                     </div>
                                     {/* Pin */}
-                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-600">
-                                        <div className="w-4 h-4 bg-blue-600 rounded-full animate-ping absolute" />
-                                        <div className="w-4 h-4 bg-blue-600 rounded-full relative" />
+                                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-primary">
+                                        <div className="w-4 h-4 bg-primary rounded-full animate-ping absolute" />
+                                        <div className="w-4 h-4 bg-primary rounded-full relative" />
                                     </div>
                                 </div>
 
@@ -89,7 +89,7 @@ export default function AppShowcase() {
                         </div>
 
                         {/* Background Glow */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[650px] bg-blue-500/20 rounded-full blur-3xl -z-10" />
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[650px] bg-primary/20 rounded-full blur-3xl -z-10" />
                     </motion.div>
                 </div>
             </div>

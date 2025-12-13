@@ -25,7 +25,7 @@ export default function LegalDocument({ title, updateDate, children }: LegalDocu
                             Dernière mise à jour : {updateDate}
                         </p>
 
-                        <div className="prose prose-slate max-w-none prose-headings:text-slate-900 prose-p:text-slate-700 prose-li:text-slate-700 prose-a:text-blue-600 hover:prose-a:text-blue-500">
+                        <div className="prose prose-slate max-w-none prose-headings:text-slate-900 prose-p:text-slate-700 prose-li:text-slate-700 prose-a:text-primary hover:prose-a:text-primary/80">
                             {children}
                         </div>
                     </div>

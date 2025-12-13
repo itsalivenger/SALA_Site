@@ -13,9 +13,9 @@ export default function MissionVision() {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="p-8 rounded-3xl bg-blue-50 border border-blue-100"
+                        className="p-8 rounded-3xl bg-primary/5 border border-primary/20"
                     >
-                        <div className="w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center text-white mb-6 shadow-lg shadow-blue-600/20">
+                        <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center text-white mb-6 shadow-lg shadow-primary/20">
                             <Target className="w-7 h-7" />
                         </div>
                         <h2 className="text-3xl font-bold text-slate-900 mb-4">Notre Mission</h2>

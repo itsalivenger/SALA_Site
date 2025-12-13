@@ -8,7 +8,7 @@ export default function ServiceCTA() {
         <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
 
             {/* Decorative circles */}
-            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-600 rounded-full blur-[100px] opacity-20" />
+            <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary rounded-full blur-[100px] opacity-20" />
             <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600 rounded-full blur-[100px] opacity-20" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -22,7 +22,7 @@ export default function ServiceCTA() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <Link
                         href="/download"
-                        className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-slate-900 transition-all bg-white rounded-xl hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-white"
+                        className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-slate-900 transition-all duration-300 bg-white rounded-xl hover:bg-white hover:scale-105 hover:shadow-xl hover:shadow-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-white"
                     >
                         <Smartphone className="w-6 h-6 mr-2" />
                         Télécharger l'App

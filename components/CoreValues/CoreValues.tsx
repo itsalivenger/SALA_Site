@@ -26,7 +26,7 @@ const values = [
         icon: Globe,
         title: "Impact Durable",
         description: "Nous nous engageons pour une logistique plus verte et responsable.",
-        color: "bg-blue-50 text-blue-600"
+        color: "bg-primary/5 text-primary"
     }
 ];
 

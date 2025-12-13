@@ -14,8 +14,8 @@ const features = [
             "Support client 24/7",
             "Tarification transparente"
         ],
-        color: "bg-blue-50 border-blue-100",
-        iconColor: "text-blue-600"
+        color: "bg-primary/5 border-primary/10",
+        iconColor: "text-primary"
     },
     {
         title: "Pour les Chauffeurs",

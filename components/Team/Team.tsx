@@ -48,7 +48,7 @@ export default function Team() {
                             transition={{ delay: index * 0.1 }}
                             className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center"
                         >
-                            <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-50">
+                            <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/10">
                                 <img
                                     src={member.image}
                                     alt={member.name}
@@ -56,7 +56,7 @@ export default function Team() {
                                 />
                             </div>
                             <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
-                            <p className="text-blue-600 font-medium">{member.role}</p>
+                            <p className="text-primary font-medium">{member.role}</p>
                         </motion.div>
                     ))}
                 </div>

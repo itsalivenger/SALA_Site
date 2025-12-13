@@ -3,10 +3,12 @@
 import { motion } from "framer-motion";
 
 const milestones = [
+    { year: "2021", title: "La Genèse", description: "L'idée de Sala naît d'un besoin de simplifier la logistique urbaine." },
     { year: "2022", title: "La Fondation", description: "Lancement initial à Alger avec une flotte de 10 chauffeurs." },
     { year: "2023", title: "L'Expansion", description: "Ouverture des opérations à Oran et lancement de l'offre B2B." },
     { year: "2024", title: "Innovation", description: "Intégration de l'IA pour l'optimisation des trajets et lancement de Sala Pay." },
-    { year: "Futur", title: "Vision Globe", description: "Expansion internationale et flotte 100% électrique." },
+    { year: "2025", title: "Écosystème Vert", description: "Transition vers une flotte hybride et électrique pour réduire l'empreinte carbone." },
+    { year: "Futur", title: "Vision Globe", description: "Expansion internationale et couverture de toute la région MENA." },
 ];
 
 export default function OurStory() {
@@ -34,35 +36,17 @@ export default function OurStory() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}
+                                className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
                             >
-                                <div className="flex-1 text-center md:text-right">
-                                    {index % 2 === 0 && (
-                                        <>
-                                            <h3 className="text-2xl font-bold text-slate-900">{item.year}</h3>
-                                            <h4 className="text-xl font-bold text-blue-600 mb-2">{item.title}</h4>
-                                            <p className="text-gray-600">{item.description}</p>
-                                        </>
-                                    )}
-                                    {index % 2 !== 0 && (
-                                        <div className="hidden md:block"></div>
-                                    )}
+                                <div className={`flex-1 text-center ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                                    <h3 className="text-2xl font-bold text-slate-900">{item.year}</h3>
+                                    <h4 className="text-xl font-bold text-primary mb-2">{item.title}</h4>
+                                    <p className="text-gray-600">{item.description}</p>
                                 </div>
 
-                                <div className="w-8 h-8 rounded-full bg-blue-600 border-4 border-blue-100 z-10 flex-shrink-0" />
+                                <div className="w-8 h-8 rounded-full bg-primary border-4 border-primary/20 z-10 flex-shrink-0" />
 
-                                <div className="flex-1 text-center md:text-left">
-                                    {index % 2 !== 0 && (
-                                        <>
-                                            <h3 className="text-2xl font-bold text-slate-900">{item.year}</h3>
-                                            <h4 className="text-xl font-bold text-blue-600 mb-2">{item.title}</h4>
-                                            <p className="text-gray-600">{item.description}</p>
-                                        </>
-                                    )}
-                                    {index % 2 === 0 && (
-                                        <div className="hidden md:block"></div>
-                                    )}
-                                </div>
+                                <div className="flex-1 hidden md:block" />
                             </motion.div>
                         ))}
                     </div>

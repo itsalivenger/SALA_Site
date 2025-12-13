@@ -25,8 +25,8 @@ export default function ContactMap() {
 
                 {/* Location Badge Overlay */}
                 <div className="absolute top-6 right-6 bg-white p-4 rounded-2xl shadow-xl flex items-center gap-3 border border-gray-100">
-                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
-                        <MapPin className="w-6 h-6 fill-blue-600" />
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+                        <MapPin className="w-6 h-6 fill-primary" />
                     </div>
                     <div>
                         <p className="font-bold text-slate-900 text-sm">Sala - Casablanca</p>

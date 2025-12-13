@@ -8,7 +8,7 @@ const allServices = [
         title: "Livraison Instantanée",
         description: "Besoin tout de suite ? Notre service de livraison instantanée achemine vos colis à travers la ville en moins de 60 minutes. Idéal pour les documents, la nourriture et les colis urgents.",
         icon: Clock,
-        color: "bg-blue-100 text-blue-600",
+        color: "bg-primary/10 text-primary",
     },
     {
         title: "Logistique de Fret Lourd",
@@ -35,8 +35,8 @@ const allServices = [
         color: "bg-purple-100 text-purple-600",
     },
     {
-        title: "Solutions d'Affaires",
-        description: "Intégrations API pour les boutiques e-commerce. Automatisez vos expéditions et laissez-nous gérer votre logistique du dernier kilomètre.",
+        title: "Tableau de Bord Pro",
+        description: "Gérez vos expéditions en toute simplicité. Suivi en temps réel, facturation centralisée et outils de gestion pour optimiser votre logistique.",
         icon: Briefcase,
         color: "bg-cyan-100 text-cyan-600",
     },
@@ -46,15 +46,6 @@ export default function ServicesList() {
     return (
         <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-20">
-                    <h1 className="text-4xl font-extrabold text-slate-900 sm:text-5xl mb-6">
-                        Nos Services
-                    </h1>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Des solutions logistiques complètes adaptées aux particuliers et aux entreprises.
-                    </p>
-                </div>
-
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {allServices.map((service, index) => (
                         <motion.div

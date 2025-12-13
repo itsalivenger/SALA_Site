@@ -45,7 +45,7 @@ export default function Testimonials() {
             {/* Animated Gradient Background */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
                 <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-purple-200/40 rounded-full blur-[120px] animate-pulse" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-blue-200/40 rounded-full blur-[120px] animate-pulse delay-1000" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-primary/20 rounded-full blur-[120px] animate-pulse delay-1000" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -58,13 +58,13 @@ export default function Testimonials() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-blue-100 text-blue-600 text-sm font-bold shadow-sm mb-6">
-                            <Star className="w-4 h-4 fill-blue-600" />
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/20 text-primary text-sm font-bold shadow-sm mb-6">
+                            <Star className="w-4 h-4 fill-primary" />
                             Avis Clients
                         </div>
                         <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
                             Ils parlent de nous <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">mieux que personne.</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">mieux que personne.</span>
                         </h2>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                             Découvrez pourquoi des milliers d'utilisateurs et d'entreprises choisissent Sala pour leurs besoins quotidiens. Une satisfaction client au cœur de notre mission.

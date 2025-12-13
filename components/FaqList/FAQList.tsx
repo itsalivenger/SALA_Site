@@ -79,7 +79,7 @@ export default function FAQList() {
                                 return (
                                     <div
                                         key={i}
-                                        className="border border-gray-100 rounded-2xl overflow-hidden transition-all duration-200 hover:border-blue-100 bg-slate-50"
+                                        className="border border-gray-100 rounded-2xl overflow-hidden transition-all duration-200 hover:border-primary/20 bg-slate-50"
                                     >
                                         <button
                                             onClick={() => toggleFAQ(id)}
@@ -88,7 +88,7 @@ export default function FAQList() {
                                             <span className="font-bold text-slate-800 text-lg pr-8">
                                                 {item.question}
                                             </span>
-                                            <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-blue-600 text-white' : 'bg-white text-slate-400'}`}>
+                                            <span className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-primary text-white' : 'bg-white text-slate-400'}`}>
                                                 {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
                                             </span>
                                         </button>

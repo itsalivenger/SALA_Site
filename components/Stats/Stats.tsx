@@ -15,7 +15,7 @@ export default function Stats() {
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
     return (
-        <section className="py-20 bg-blue-600 text-white relative overflow-hidden">
+        <section className="py-20 bg-primary text-white relative overflow-hidden">
             {/* Decorative Circles */}
             <div className="absolute top-0 left-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2" />
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-white opacity-5 rounded-full translate-x-1/3 translate-y-1/3" />
@@ -32,7 +32,7 @@ export default function Stats() {
                             <div className="text-4xl md:text-5xl font-extrabold mb-2 text-white">
                                 {stat.value}
                             </div>
-                            <div className="text-blue-100 font-medium text-lg">
+                            <div className="text-white/90 font-medium text-lg">
                                 {stat.label}
                             </div>
                         </motion.div>

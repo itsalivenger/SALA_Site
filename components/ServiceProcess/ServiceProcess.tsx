@@ -37,8 +37,8 @@ export default function ServiceProcess() {
                                 transition={{ delay: index * 0.2 }}
                                 className="text-center bg-white"
                             >
-                                <div className="w-20 h-20 mx-auto rounded-full bg-white border-4 border-blue-50 flex items-center justify-center mb-6 relative">
-                                    <step.icon className="w-8 h-8 text-blue-600" />
+                                <div className="w-20 h-20 mx-auto rounded-full bg-white border-4 border-primary/10 flex items-center justify-center mb-6 relative">
+                                    <step.icon className="w-8 h-8 text-primary" />
                                     <div className="absolute top-0 right-0 w-6 h-6 bg-slate-900 rounded-full text-white text-xs font-bold flex items-center justify-center border-2 border-white">
                                         {index + 1}
                                     </div>

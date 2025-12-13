@@ -8,7 +8,7 @@ const services = [
         title: "Livraison Instantanée",
         description: "Faites livrer vos colis localement en quelques minutes. Rapide, sécurisé et traçable.",
         icon: Clock,
-        color: "bg-blue-100 text-blue-600",
+        color: "bg-primary/10 text-primary",
     },
     {
         title: "Logistique Lourde",
@@ -56,7 +56,7 @@ export default function ServicesPreview() {
                             <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${service.color} group-hover:scale-110 transition-transform`}>
                                 <service.icon className="w-7 h-7" />
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                            <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors">
                                 {service.title}
                             </h3>
                             <p className="text-gray-600 leading-relaxed">

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronRight, Download } from "lucide-react";
+import { Menu, X, ChevronRight, Download, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 
 export default function Navbar() {
@@ -32,8 +32,8 @@ export default function Navbar() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled || isOpen
-            ? "bg-white/90 backdrop-blur-lg border-b border-gray-100 shadow-sm py-3"
-            : "bg-transparent py-5"
+          ? "bg-white/90 backdrop-blur-lg border-b border-gray-100 shadow-sm py-4"
+          : "bg-transparent py-6"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +42,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center relative z-50">
               <Link href="/" className="flex items-center gap-2 group">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-primary/80 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
                   S
                 </div>
                 <span className={`text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 ${!scrolled && !isOpen ? 'md:text-white' : ''} transition-colors`}>
@@ -52,32 +52,53 @@ export default function Navbar() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-1">
+            <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative px-4 py-2 font-medium transition-colors rounded-full hover:bg-white/10 ${!scrolled ? "text-white hover:text-white" : "text-gray-600 hover:text-blue-600"
-                    }`}
+                  className="relative group px-5 py-2"
                 >
-                  <span className="relative z-10">{link.name}</span>
-                  {/* Hover Underline Animation if needed, or simple color change */}
+                  <span className={`relative z-10 text-base font-semibold transition-colors duration-300 ${!scrolled ? "text-white group-hover:text-white" : "text-slate-600 group-hover:text-primary"}`}>
+                    {link.name}
+                  </span>
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${!scrolled ? "bg-white" : "bg-primary"}`} />
                 </Link>
               ))}
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden md:block">
+            {/* CTA Button and Language Switcher */}
+            <div className="hidden md:flex items-center gap-6">
               <Link
                 href="/download"
                 className={`group relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 ${!scrolled
-                    ? "bg-white text-slate-900 hover:bg-blue-50"
-                    : "bg-slate-900 text-white hover:bg-slate-800 shadow-lg shadow-blue-500/20"
+                  ? "bg-white text-slate-900 hover:bg-gray-100"
+                  : "bg-slate-900 text-white hover:bg-slate-800 shadow-lg shadow-primary/20"
                   }`}
               >
                 <span>Télécharger</span>
                 <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
               </Link>
+
+              <div className="relative group">
+                <button className={`flex items-center gap-1 font-semibold transition-colors ${!scrolled ? "text-white hover:text-white/80" : "text-gray-600 hover:text-primary"}`}>
+                  <span className="uppercase">FR</span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+                <div className="absolute top-full right-0 pt-4 w-32 hidden group-hover:block">
+                  <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2">
+                    <button className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors cursor-pointer">
+                      Français
+                    </button>
+                    <button className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors cursor-pointer">
+                      English
+                    </button>
+                    <button className="w-full text-right px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors font-arabic cursor-pointer">
+                      العربية
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -114,7 +135,7 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="block text-3xl font-bold text-slate-900 hover:text-blue-600 transition-colors py-2"
+                      className="block text-3xl font-bold text-slate-900 hover:text-primary transition-colors py-2"
                     >
                       {link.name}
                     </Link>

@@ -15,7 +15,7 @@ export default function ContactForm() {
                             type="text"
                             id="name"
                             placeholder="Votre nom"
-                            className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+                            className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                         />
                     </div>
                     <div className="space-y-2">
@@ -24,7 +24,7 @@ export default function ContactForm() {
                             type="email"
                             id="email"
                             placeholder="votre@email.com"
-                            className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+                            className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                         />
                     </div>
                 </div>
@@ -33,7 +33,7 @@ export default function ContactForm() {
                     <label htmlFor="subject" className="text-sm font-semibold text-slate-900">Sujet</label>
                     <select
                         id="subject"
-                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                     >
                         <option value="">Sélectionnez un sujet</option>
                         <option value="support">Support Technique</option>
@@ -49,13 +49,13 @@ export default function ContactForm() {
                         id="message"
                         rows={5}
                         placeholder="Comment pouvons-nous vous aider ?"
-                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all resize-none"
+                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
                     />
                 </div>
 
                 <button
                     type="button" // Change to submit when connected
-                    className="w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors flex items-center justify-center gap-2"
+                    className="w-full py-4 px-6 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-colors flex items-center justify-center gap-2"
                 >
                     <Send className="w-5 h-5" />
                     Envoyer le message

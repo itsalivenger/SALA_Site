@@ -1,7 +1,6 @@
 "use client";
 
-import { MapPin, Phone, Mail } from "lucide-react";
-import SocialMediaLinks from "@/components/SocialMediaLinks/SocialMediaLinks";
+import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 export default function ContactInfo() {
     return (
@@ -10,7 +9,7 @@ export default function ContactInfo() {
 
             <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center flex-shrink-0 text-blue-600">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
                         <MapPin className="w-6 h-6" />
                     </div>
                     <div>
@@ -51,7 +50,23 @@ export default function ContactInfo() {
 
                 <div className="pt-8 border-t border-gray-200">
                     <h4 className="font-bold text-slate-900 mb-6">Suivez-nous</h4>
-                    <SocialMediaLinks />
+                    <div className="grid grid-cols-2 gap-3">
+                        {[
+                            { name: 'Facebook', icon: Facebook, color: 'hover:text-primary hover:border-primary/20' },
+                            { name: 'Twitter', icon: Twitter, color: 'hover:text-sky-500 hover:border-sky-200' },
+                            { name: 'Instagram', icon: Instagram, color: 'hover:text-pink-600 hover:border-pink-200' },
+                            { name: 'LinkedIn', icon: Linkedin, color: 'hover:text-primary hover:border-primary/20' }
+                        ].map((social) => (
+                            <a
+                                key={social.name}
+                                href="#"
+                                className={`bg-white border-2 border-gray-200 ${social.color} px-4 py-3 rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 group`}
+                            >
+                                <social.icon className="w-5 h-5 text-gray-600 group-hover:scale-110 transition-transform" />
+                                <span className="font-semibold text-sm text-slate-900">{social.name}</span>
+                            </a>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

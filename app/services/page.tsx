@@ -2,6 +2,7 @@ import ServicesList from "@/components/ServicesList/ServicesList";
 import ServiceCTA from "@/components/ServiceCTA/ServiceCTA";
 import BusinessSolutions from "@/components/BusinessSolutions/BusinessSolutions";
 import ServiceProcess from "@/components/ServiceProcess/ServiceProcess";
+import ServicesHero from "@/components/ServicesHero/ServicesHero";
 
 export const metadata = {
     title: "Nos Services - Sala",
@@ -10,7 +11,8 @@ export const metadata = {
 
 export default function ServicesPage() {
     return (
-        <div className="flex flex-col min-h-screen pt-16">
+        <div className="flex flex-col min-h-screen">
+            <ServicesHero />
             <ServicesList />
             <BusinessSolutions />
             <ServiceProcess />

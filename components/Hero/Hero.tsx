@@ -6,7 +6,7 @@ import { ArrowRight, Smartphone } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-b from-blue-50/50 to-white">
+        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-b from-primary/5 to-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
                     {/* Text Content */}
@@ -16,13 +16,13 @@ export default function Hero() {
                         transition={{ duration: 0.6 }}
                         className="text-center lg:text-left"
                     >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/50 text-blue-600 text-sm font-semibold mb-6">
-                            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+                            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                             Disponible sur iOS & Android
                         </div>
 
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
-                            Les seules applications dont vous avez besoin pour <span className="text-blue-600">déplacer</span> quoi que ce soit.
+                            Les seules applications dont vous avez besoin pour <span className="text-primary">déplacer</span> quoi que ce soit.
                         </h1>
 
                         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
@@ -33,7 +33,7 @@ export default function Hero() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <Link
                                 href="/download"
-                                className="inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all bg-slate-900 rounded-xl hover:bg-slate-800 hover:shadow-lg shadow-blue-500/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900"
+                                className="inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all bg-slate-900 rounded-xl hover:bg-slate-800 hover:shadow-lg shadow-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900"
                             >
                                 <Smartphone className="w-5 h-5 mr-2" />
                                 Télécharger App Client
@@ -72,8 +72,8 @@ export default function Hero() {
                     >
                         {/* Abstract Background Shapes */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-3xl absolute -translate-y-12 translate-x-12" />
-                            <div className="w-[400px] h-[400px] bg-indigo-400/10 rounded-full blur-3xl absolute translate-y-12 -translate-x-12" />
+                            <div className="w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl absolute -translate-y-12 translate-x-12" />
+                            <div className="w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl absolute translate-y-12 -translate-x-12" />
                         </div>
 
                         {/* Placeholder for App Mockups */}
@@ -87,7 +87,7 @@ export default function Hero() {
                                 {/* Mock content */}
                                 <div className="p-4 pt-12 space-y-4">
 
-                                    <div className="h-32 rounded-2xl bg-blue-600 w-full shadow-lg" />
+                                    <div className="h-32 rounded-2xl bg-primary w-full shadow-lg" />
                                     <div className="grid grid-cols-2 gap-4">
                                         <div className="h-24 rounded-2xl bg-white shadow-sm border border-gray-100" />
                                         <div className="h-24 rounded-2xl bg-white shadow-sm border border-gray-100" />
