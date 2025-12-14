@@ -121,12 +121,12 @@ export default function AdminsPage() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                     <h1 className="text-3xl font-bold text-[var(--foreground)] tracking-tight">Gestion des Admins</h1>
-                    <div className="text-black dark:text-white space-y-1 mt-1 max-w-2xl">
+                    <div style={{ color: 'var(--text-black)' }} className="space-y-1 mt-1 max-w-2xl">
                         <p>Cette section permet de gérer les membres de l'équipe administrative et leurs privilèges.</p>
                         <ul className="text-sm list-disc list-inside pt-1 space-y-1">
-                            <li><strong className="text-black dark:text-white">Super Admin</strong> : Accès total à la plateforme.</li>
-                            <li><strong className="text-black dark:text-white">Manager</strong> : Gestion des opérations (commandes, livreurs).</li>
-                            <li><strong className="text-black dark:text-white">Support</strong> : Accès restreint pour le service client.</li>
+                            <li><strong>Super Admin</strong> : Accès total à la plateforme.</li>
+                            <li><strong>Manager</strong> : Gestion des opérations (commandes, livreurs).</li>
+                            <li><strong>Support</strong> : Accès restreint pour le service client.</li>
                         </ul>
                     </div>
                 </div>

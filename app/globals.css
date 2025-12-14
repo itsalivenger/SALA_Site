@@ -2,7 +2,10 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #ffffff;
+  --foreground: #000000;
+
+  --text-black: #000000;
+  --text-white: #ffffff;
 
   --primary: #1289ff;
   /* blue-600 */
@@ -11,6 +14,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-text-black: var(--text-black);
+  --color-text-white: var(--text-white);
   --color-primary: var(--primary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

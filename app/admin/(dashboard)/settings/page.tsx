@@ -99,7 +99,7 @@ export default function SettingsPage() {
                             </div>
                             <h2 className="text-lg font-bold text-[var(--foreground)]">Contact</h2>
                         </div>
-                        <p className="text-sm text-black dark:text-white">Numéro de téléphone et adresse du siège affichés aux clients.</p>
+                        <p className="text-sm" style={{ color: 'var(--text-black)' }}>Numéro de téléphone et adresse du siège affichés aux clients.</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
@@ -138,7 +138,7 @@ export default function SettingsPage() {
                             </div>
                             <h2 className="text-lg font-bold text-[var(--foreground)]">Réseaux Sociaux</h2>
                         </div>
-                        <p className="text-sm text-black dark:text-white">Liens vers vos pages officielles sur les réseaux sociaux.</p>
+                        <p className="text-sm" style={{ color: 'var(--text-black)' }}>Liens vers vos pages officielles sur les réseaux sociaux.</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -195,7 +195,7 @@ export default function SettingsPage() {
                             </div>
                             <h2 className="text-lg font-bold text-[var(--foreground)]">Liens Applications</h2>
                         </div>
-                        <p className="text-sm text-black dark:text-white">Liens de téléchargement de votre application mobile.</p>
+                        <p className="text-sm" style={{ color: 'var(--text-black)' }}>Liens de téléchargement de votre application mobile.</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
@@ -231,7 +231,7 @@ export default function SettingsPage() {
                             </div>
                             <h2 className="text-lg font-bold text-[var(--foreground)]">Configuration Commande</h2>
                         </div>
-                        <p className="text-sm text-black dark:text-white">Définissez les frais de livraison et le montant minimum de commande.</p>
+                        <p className="text-sm" style={{ color: 'var(--text-black)' }}>Définissez les frais de livraison et le montant minimum de commande.</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">

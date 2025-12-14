@@ -6,7 +6,7 @@ import { usePopup } from "@/context/PopupContext";
 
 export default function Newsletter() {
     const [email, setEmail] = useState("");
-    const [status, setStatus] = useState<"idle" | "loading">("idle");
+    const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
     const { showPopup } = usePopup();
 
     const handleSubmit = async (e: React.FormEvent) => {
