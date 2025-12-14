@@ -64,8 +64,50 @@ import SocialMediaLinks from "@/components/SocialMediaLinks/SocialMediaLinks";
 - **Icons**: Lucide React
 - **Language**: TypeScript
 
+## Dynamic Popup System
+**Importance**: Enhances user experience by providing immediate, visually appealing feedback (Success, Error, Warning, Info) without disrupting the user flow.
+
+- **Global Access**: Managed via `PopupContext`, allowing any component to trigger notifications easily.
+- **Design**: Glassmorphism style with smooth entrance/exit animations.
+- **Usage**:
+  ```tsx
+  const { showPopup } = usePopup();
+  showPopup({ 
+    type: 'success', 
+    title: 'Success!', 
+    message: 'Operation completed.' 
+  });
+  ```
+
 ## Styling Guidelines
 **IMPORTANT**: Do not hardcode colors in your components. Always use the CSS variables defined in `src/app/globals.css` (e.g., `var(--primary)`, `var(--background)`, `var(--foreground)`) to ensure consistency and theme support.
+
+## API Route Structure
+
+All API routes should be placed in `app/api`. This project uses standard Next.js Route Handlers.
+
+### Guidelines
+- **Path**: `app/api/[resource]/route.ts`
+- **Response Format**: Always return JSON.
+- **Error Handling**: Use consistent error status codes (400, 401, 403, 404, 500) and JSON error messages.
+
+### Example
+```ts
+// app/api/example/route.ts
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+  return NextResponse.json({ message: "Success" });
+}
+```
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory and add the following:
+
+```bash
+MONGODB_URI=your_mongodb_connection_string_here
+```
 
 ## Getting Started
 

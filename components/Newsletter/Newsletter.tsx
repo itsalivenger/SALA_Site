@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import { Send, CheckCircle, Mail, Sparkles } from "lucide-react";
+import { usePopup } from "@/context/PopupContext";
 
 export default function Newsletter() {
     const [email, setEmail] = useState("");
-    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [status, setStatus] = useState<"idle" | "loading">("idle");
+    const { showPopup } = usePopup();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -14,13 +16,48 @@ export default function Newsletter() {
 
         setStatus("loading");
 
-        // TODO: Connect to API endpoint when ready
-        // Simulate API call for now
-        setTimeout(() => {
-            setStatus("success");
+        try {
+            const res = await fetch("/api/newsletter", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                throw new Error(data.error || "Erreur serveur");
+            }
+
+            // Handle "Already Subscribed" case
+            if (data.exists) {
+                showPopup({
+                    type: "warning",
+                    title: "Déjà Abonné",
+                    message: data.message || "Vous êtes déjà inscrit à notre newsletter.",
+                });
+            }
+            // Handle Success case
+            else {
+                showPopup({
+                    type: "success",
+                    title: "Inscription Réussie!",
+                    message: data.message || "Vous êtes maintenant inscrit à notre newsletter.",
+                });
+            }
+
             setEmail("");
-            setTimeout(() => setStatus("idle"), 3000);
-        }, 1000);
+        } catch (error: any) {
+            console.error(error);
+            // Error Popup
+            showPopup({
+                type: "error",
+                title: "Échec de l'inscription",
+                message: error.message || "Une erreur s'est produite. Veuillez réessayer.",
+            });
+        } finally {
+            setStatus("idle");
+        }
     };
 
     return (
@@ -108,31 +145,18 @@ export default function Newsletter() {
                                     disabled={status === "loading" || status === "success"}
                                     className="w-full px-6 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-primary/30 hover:shadow-primary/50 disabled:opacity-50 disabled:cursor-not-allowed group"
                                 >
-                                    {status === "loading" && (
+                                    {status === "loading" ? (
                                         <>
                                             <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                                             <span>Inscription en cours...</span>
                                         </>
-                                    )}
-                                    {status === "success" && (
-                                        <>
-                                            <CheckCircle className="w-5 h-5" />
-                                            <span>Inscrit avec succès!</span>
-                                        </>
-                                    )}
-                                    {(status === "idle" || status === "error") && (
+                                    ) : (
                                         <>
                                             <span>S'abonner gratuitement</span>
                                             <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                         </>
                                     )}
                                 </button>
-
-                                {status === "error" && (
-                                    <p className="text-red-400 text-sm text-center">
-                                        Une erreur s'est produite. Veuillez réessayer.
-                                    </p>
-                                )}
 
                                 <p className="text-xs text-slate-400 text-center">
                                     En vous inscrivant, vous acceptez de recevoir nos emails. Désinscription possible à tout moment.
