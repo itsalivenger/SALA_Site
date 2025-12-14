@@ -15,7 +15,11 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: 'Email ou mot de passe incorrect' }, { status: 401 });
         }
 
-        // 2. Check password
+        // 2. Check password - add type guard for TypeScript
+        if (!admin.password) {
+            return NextResponse.json({ error: 'Configuration de compte invalide' }, { status: 500 });
+        }
+
         const isMatch = await bcrypt.compare(password, admin.password);
         if (!isMatch) {
             return NextResponse.json({ error: 'Email ou mot de passe incorrect' }, { status: 401 });

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Save, Loader2, MapPin, Phone, Smartphone, DollarSign, Share2, ShieldAlert, ShoppingBag } from "lucide-react";
+import { Save, Loader2, MapPin, Phone, Smartphone, Share2, ShieldAlert, ShoppingBag } from "lucide-react";
 import { usePopup } from "@/context/PopupContext";
 
 export default function SettingsPage() {
@@ -17,6 +17,7 @@ export default function SettingsPage() {
         companyPhone: "",
         facebookUrl: "",
         instagramUrl: "",
+        twitterUrl: "",
         tiktokUrl: "",
         iosAppUrl: "",
         androidAppUrl: "",
@@ -91,11 +92,14 @@ export default function SettingsPage() {
 
                 {/* 1. Contact Info */}
                 <div className="bg-[var(--background)] p-6 sm:p-8 rounded-2xl border border-[var(--foreground)]/10 shadow-sm space-y-6">
-                    <div className="flex items-center gap-3 pb-4 border-b border-[var(--foreground)]/5">
-                        <div className="p-2 bg-blue-500/10 rounded-lg">
-                            <MapPin className="w-5 h-5 text-blue-500" />
+                    <div className="space-y-1 pb-4 border-b border-[var(--foreground)]/5">
+                        <div className="flex items-center gap-3">
+                            <div className="p-2 bg-blue-500/10 rounded-lg">
+                                <MapPin className="w-5 h-5 text-blue-500" />
+                            </div>
+                            <h2 className="text-lg font-bold text-[var(--foreground)]">Contact</h2>
                         </div>
-                        <h2 className="text-lg font-bold text-[var(--foreground)]">Contact</h2>
+                        <p className="text-sm text-[var(--foreground)]/60">Numéro de téléphone et adresse du siège affichés aux clients.</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
@@ -127,14 +131,17 @@ export default function SettingsPage() {
 
                 {/* 2. Social Media Links */}
                 <div className="bg-[var(--background)] p-6 sm:p-8 rounded-2xl border border-[var(--foreground)]/10 shadow-sm space-y-6">
-                    <div className="flex items-center gap-3 pb-4 border-b border-[var(--foreground)]/5">
-                        <div className="p-2 bg-pink-500/10 rounded-lg">
-                            <Share2 className="w-5 h-5 text-pink-500" />
+                    <div className="space-y-1 pb-4 border-b border-[var(--foreground)]/5">
+                        <div className="flex items-center gap-3">
+                            <div className="p-2 bg-pink-500/10 rounded-lg">
+                                <Share2 className="w-5 h-5 text-pink-500" />
+                            </div>
+                            <h2 className="text-lg font-bold text-[var(--foreground)]">Réseaux Sociaux</h2>
                         </div>
-                        <h2 className="text-lg font-bold text-[var(--foreground)]">Réseaux Sociaux</h2>
+                        <p className="text-sm text-[var(--foreground)]/60">Liens vers vos pages officielles sur les réseaux sociaux.</p>
                     </div>
 
-                    <div className="grid md:grid-cols-3 gap-6">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div className="space-y-2">
                             <label className="text-sm font-medium text-[var(--foreground)]/70">Facebook</label>
                             <input
@@ -156,6 +163,16 @@ export default function SettingsPage() {
                             />
                         </div>
                         <div className="space-y-2">
+                            <label className="text-sm font-medium text-[var(--foreground)]/70">X (Twitter)</label>
+                            <input
+                                type="url"
+                                value={formData.twitterUrl}
+                                onChange={e => setFormData({ ...formData, twitterUrl: e.target.value })}
+                                className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)]"
+                                placeholder="x.com/username"
+                            />
+                        </div>
+                        <div className="space-y-2">
                             <label className="text-sm font-medium text-[var(--foreground)]/70">TikTok</label>
                             <input
                                 type="url"
@@ -171,11 +188,14 @@ export default function SettingsPage() {
 
                 {/* 3. App Links */}
                 <div className="bg-[var(--background)] p-6 sm:p-8 rounded-2xl border border-[var(--foreground)]/10 shadow-sm space-y-6">
-                    <div className="flex items-center gap-3 pb-4 border-b border-[var(--foreground)]/5">
-                        <div className="p-2 bg-green-500/10 rounded-lg">
-                            <Smartphone className="w-5 h-5 text-green-500" />
+                    <div className="space-y-1 pb-4 border-b border-[var(--foreground)]/5">
+                        <div className="flex items-center gap-3">
+                            <div className="p-2 bg-green-500/10 rounded-lg">
+                                <Smartphone className="w-5 h-5 text-green-500" />
+                            </div>
+                            <h2 className="text-lg font-bold text-[var(--foreground)]">Liens Applications</h2>
                         </div>
-                        <h2 className="text-lg font-bold text-[var(--foreground)]">Liens Applications</h2>
+                        <p className="text-sm text-[var(--foreground)]/60">Liens de téléchargement de votre application mobile.</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
@@ -204,11 +224,14 @@ export default function SettingsPage() {
 
                 {/* 4. Configuration & Rules */}
                 <div className="bg-[var(--background)] p-6 sm:p-8 rounded-2xl border border-[var(--foreground)]/10 shadow-sm space-y-6">
-                    <div className="flex items-center gap-3 pb-4 border-b border-[var(--foreground)]/5">
-                        <div className="p-2 bg-yellow-500/10 rounded-lg">
-                            <ShoppingBag className="w-5 h-5 text-yellow-500" />
+                    <div className="space-y-1 pb-4 border-b border-[var(--foreground)]/5">
+                        <div className="flex items-center gap-3">
+                            <div className="p-2 bg-yellow-500/10 rounded-lg">
+                                <ShoppingBag className="w-5 h-5 text-yellow-500" />
+                            </div>
+                            <h2 className="text-lg font-bold text-[var(--foreground)]">Configuration Commande</h2>
                         </div>
-                        <h2 className="text-lg font-bold text-[var(--foreground)]">Configuration Commande</h2>
+                        <p className="text-sm text-[var(--foreground)]/60">Définissez les frais de livraison et le montant minimum de commande.</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">

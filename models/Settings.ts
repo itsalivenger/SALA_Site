@@ -5,6 +5,7 @@ export interface ISettings extends Document {
     companyPhone: string;
     facebookUrl: string;
     instagramUrl: string;
+    twitterUrl: string;
     tiktokUrl: string;
     iosAppUrl: string;
     androidAppUrl: string;
@@ -30,6 +31,10 @@ const SettingsSchema = new Schema(
             default: '',
         },
         instagramUrl: {
+            type: String,
+            default: '',
+        },
+        twitterUrl: {
             type: String,
             default: '',
         },
