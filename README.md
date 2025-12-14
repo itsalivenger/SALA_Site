@@ -1,8 +1,15 @@
 # Sala Site Project
 
-This repository contains the multipurpose website for **Sala**, a company with two apps (Client and Driver). The website serves two main purposes:
+# Sala Site Project
+
+This repository contains the central hub and administrative core for **Sala**, a comprehensive logistics ecosystem connecting three key applications:
+1.  **Sala Client App**: For users to place orders and track deliveries.
+2.  **Sala Driver App**: For delivery partners (Livreurs) to accept and fulfill assignments.
+3.  **Sala Admin (This Project)**: The control tower for managing the entire operation.
+
+The website serves two main purposes:
 1.  **Public-facing website**: To present the company, services, and app downloads.
-2.  **Admin Dashboard**: A hidden internal management system for users, orders, and settings.
+2.  **Admin Dashboard**: A hidden internal management system for orchestrating Users, Drivers, Orders, and System Settings.
 
 ## Project Structure
 

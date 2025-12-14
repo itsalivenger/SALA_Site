@@ -26,7 +26,7 @@ export default function AdminLogin() {
             {/* Background decoration */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-[var(--primary)] opacity-[0.05] blur-[100px]" />
-                <div className="absolute top-[20%] -right-[10%] w-[40%] h-[40%] rounded-full bg-blue-500 opacity-[0.05] blur-[100px]" />
+                <div className="absolute top-[20%] -right-[10%] w-[40%] h-[40%] rounded-full bg-[var(--primary)] opacity-[0.05] blur-[100px]" />
             </div>
 
             <motion.div
