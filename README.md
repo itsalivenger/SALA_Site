@@ -64,6 +64,9 @@ import SocialMediaLinks from "@/components/SocialMediaLinks/SocialMediaLinks";
 - **Icons**: Lucide React
 - **Language**: TypeScript
 
+## Styling Guidelines
+**IMPORTANT**: Do not hardcode colors in your components. Always use the CSS variables defined in `src/app/globals.css` (e.g., `var(--primary)`, `var(--background)`, `var(--foreground)`) to ensure consistency and theme support.
+
 ## Getting Started
 
 1.  Install dependencies:
