@@ -70,7 +70,7 @@ export default function Hero() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative lg:h-[600px] flex items-center justify-center"
+                        className="relative lg:h-[600px] flex items-center justify-center pt-12"
                     >
                         {/* Abstract Background Shapes */}
                         <div className="absolute inset-0 flex items-center justify-center">
@@ -79,7 +79,7 @@ export default function Hero() {
                         </div>
 
                         {/* Placeholder for App Mockups */}
-                        <div className="relative z-10 w-full max-w-sm lg:max-w-md bg-white rounded-[2.5rem] shadow-2xl border-8 border-slate-900 overflow-hidden aspect-[9/19] mx-auto rotate-[-6deg] hover:rotate-0 transition-transform duration-500">
+                        <div className="relative z-10 w-full max-w-sm lg:max-w-md bg-white rounded-[2.5rem] shadow-2xl border-8 border-slate-900 overflow-hidden aspect-[9/19] mx-auto mt-12 rotate-[-6deg] hover:rotate-0 transition-transform duration-500">
                             {/* Screen Content Placeholder */}
                             <div className="h-full w-full bg-slate-50 relative flex flex-col">
                                 <div className="h-8 bg-slate-900 w-full absolute top-0 left-0 z-20 flex justify-center items-end pb-1">
