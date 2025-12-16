@@ -3,63 +3,65 @@
 import { motion } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { useState } from "react";
-
-const faqs = [
-    {
-        category: "Général",
-        items: [
-            {
-                question: "Qu'est-ce que Sala ?",
-                answer: "Sala est une super-application logistique qui regroupe la livraison, le transport de fret, le VTC et d'autres services à la demande en une seule plateforme."
-            },
-            {
-                question: "Dans quelles villes Sala est-elle disponible ?",
-                answer: "Actuellement, nous opérons principalement à Alger, Oran et Constantine, avec une expansion prévue sur tout le territoire national très prochainement."
-            },
-            {
-                question: "Comment télécharger l'application ?",
-                answer: "Vous pouvez télécharger l'application Sala gratuitement sur l'App Store (iOS) et Google Play Store (Android)."
-            }
-        ]
-    },
-    {
-        category: "Livraisons & Commandes",
-        items: [
-            {
-                question: "Combien coûte une livraison ?",
-                answer: "Le prix dépend de la distance, du type de véhicule choisi et de l'urgence. Vous pouvez obtenir une estimation précise dans l'application avant de confirmer votre commande."
-            },
-            {
-                question: "Puis-je suivre ma commande ?",
-                answer: "Oui, absolument. Sala offre un suivi en temps réel par GPS pour toutes vos livraisons et courses, du point de départ à l'arrivée."
-            },
-            {
-                question: "Que faire si mon colis est endommagé ?",
-                answer: "Nous prenons grand soin de vos objets. Si un incident survient, contactez immédiatement notre service client via la rubrique 'Réclamations' de l'application ou du site web pour une prise en charge rapide."
-            }
-        ]
-    },
-    {
-        category: "Compte & Paiement",
-        items: [
-            {
-                question: "Quels moyens de paiement acceptez-vous ?",
-                answer: "Nous acceptons les espèces à la livraison, ainsi que les paiements électroniques via carte CIB et Edahabia directement dans l'application."
-            },
-            {
-                question: "Comment devenir chauffeur partenaire ?",
-                answer: "Téléchargez l'application 'Sala Driver', inscrivez-vous et soumettez les documents requis. Notre équipe examinera votre dossier sous 48h."
-            }
-        ]
-    }
-];
+import { useTranslations } from "next-intl";
 
 export default function FAQList() {
+    const t = useTranslations('FAQList');
     const [openIndex, setOpenIndex] = useState<string | null>(null);
 
     const toggleFAQ = (id: string) => {
         setOpenIndex(openIndex === id ? null : id);
     };
+
+    const faqs = [
+        {
+            category: t('general_title'),
+            items: [
+                {
+                    question: t('general_q1_question'),
+                    answer: t('general_q1_answer')
+                },
+                {
+                    question: t('general_q2_question'),
+                    answer: t('general_q2_answer')
+                },
+                {
+                    question: t('general_q3_question'),
+                    answer: t('general_q3_answer')
+                }
+            ]
+        },
+        {
+            category: t('deliveries_title'),
+            items: [
+                {
+                    question: t('deliveries_q1_question'),
+                    answer: t('deliveries_q1_answer')
+                },
+                {
+                    question: t('deliveries_q2_question'),
+                    answer: t('deliveries_q2_answer')
+                },
+                {
+                    question: t('deliveries_q3_question'),
+                    answer: t('deliveries_q3_answer')
+                }
+            ]
+        },
+        {
+            category: t('account_title'),
+            items: [
+                {
+                    question: t('account_q1_question'),
+                    answer: t('account_q1_answer')
+                },
+                {
+                    question: t('account_q2_question'),
+                    answer: t('account_q2_answer')
+                }
+            ]
+        }
+    ];
 
     return (
         <section className="py-24 bg-white">

@@ -1,10 +1,16 @@
 import ComplaintsHero from "@/components/ComplaintsHero/ComplaintsHero";
 import ComplaintsForm from "@/components/ComplaintsForm/ComplaintsForm";
+import { getTranslations } from 'next-intl/server';
 
-export const metadata = {
-    title: "Réclamations - Sala",
-    description: "Signalez un problème avec une commande ou un service. Nous prenons vos retours très au sérieux.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'ComplaintsMetadata' });
+
+    return {
+        title: t('title'),
+        description: t('description')
+    };
+}
 
 export default function ComplaintsPage() {
     return (

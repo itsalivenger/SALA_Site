@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function ContactHero() {
+    const t = useTranslations('ContactHero');
+
     return (
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-900 text-white">
             {/* Background Pattern */}
@@ -18,11 +21,10 @@ export default function ContactHero() {
                     transition={{ duration: 0.6 }}
                 >
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-                        Contactez-<span className="text-primary">Nous</span>
+                        {t('title_part1')}<span className="text-primary">{t('title_part2')}</span>
                     </h1>
                     <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                        Une question ? Une suggestion ? Ou simplement envie de dire bonjour ?
-                        Notre équipe est là pour vous écouter et vous répondre.
+                        {t('description')}
                     </p>
                 </motion.div>
             </div>

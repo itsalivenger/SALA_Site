@@ -2,8 +2,17 @@
 
 import { motion } from "framer-motion";
 import { Smartphone, Bell, Map, CreditCard } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function AppShowcase() {
+    const t = useTranslations('AppShowcase');
+
+    const features = [
+        { icon: Map, title: t('feature_1_title'), text: t('feature_1_desc') },
+        { icon: Bell, title: t('feature_2_title'), text: t('feature_2_desc') },
+        { icon: CreditCard, title: t('feature_3_title'), text: t('feature_3_desc') },
+    ];
+
     return (
         <section className="py-24 bg-slate-50 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,23 +26,18 @@ export default function AppShowcase() {
                         transition={{ duration: 0.8 }}
                     >
                         <div className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold mb-6">
-                            L'expérience Mobile
+                            {t('badge')}
                         </div>
                         <h2 className="text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
-                            Une interface conçue pour <br />
-                            <span className="text-primary">la simplicité</span>
+                            {t('title_part1')} <br />
+                            <span className="text-primary">{t('title_part2')}</span>
                         </h2>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                            Notre application a été pensée pour être intuitive et puissante.
-                            Gérez vos commandes, suivez vos livraisons et communiquez avec vos chauffeurs en quelques clics.
+                            {t('description')}
                         </p>
 
                         <div className="space-y-6">
-                            {[
-                                { icon: Map, title: "Suivi en temps réel", text: "Visualisez votre livreur sur la carte à chaque instant." },
-                                { icon: Bell, title: "Notifications instantanées", text: "Restez informé de l'avancement de votre mission." },
-                                { icon: CreditCard, title: "Paiements fluides", text: "Payez en espèces ou par carte en toute sécurité." },
-                            ].map((feature, idx) => (
+                            {features.map((feature, idx) => (
                                 <div key={idx} className="flex gap-4">
                                     <div className="w-12 h-12 rounded-xl bg-white border border-gray-100 flex items-center justify-center shadow-sm flex-shrink-0 text-primary">
                                         <feature.icon className="w-6 h-6" />

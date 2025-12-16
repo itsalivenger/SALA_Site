@@ -1,40 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const team = [
-    {
-        name: "Ahmed Hassan",
-        role: "PDG et Fondateur",
-        image: "https://ui-avatars.com/api/?name=Ahmed+Hassan&background=0f172a&color=fff&size=256",
-    },
-    {
-        name: "Sarah Salem",
-        role: "Directrice des Opérations",
-        image: "https://ui-avatars.com/api/?name=Sarah+Salem&background=0f172a&color=fff&size=256",
-    },
-    {
-        name: "Omar Farouk",
-        role: "Responsable Ingénierie",
-        image: "https://ui-avatars.com/api/?name=Omar+Farouk&background=0f172a&color=fff&size=256",
-    },
-    {
-        name: "Lina Mahmoud",
-        role: "Chef de Produit",
-        image: "https://ui-avatars.com/api/?name=Lina+Mahmoud&background=0f172a&color=fff&size=256",
-    },
-];
+import { useTranslations } from "next-intl";
 
 export default function Team() {
+    const t = useTranslations('Team');
+
+    const team = [
+        {
+            name: "Ahmed Hassan",
+            role: t('role_ceo'),
+            image: "https://ui-avatars.com/api/?name=Ahmed+Hassan&background=0f172a&color=fff&size=256",
+        },
+        {
+            name: "Sarah Salem",
+            role: t('role_coo'),
+            image: "https://ui-avatars.com/api/?name=Sarah+Salem&background=0f172a&color=fff&size=256",
+        },
+        {
+            name: "Omar Farouk",
+            role: t('role_eng'),
+            image: "https://ui-avatars.com/api/?name=Omar+Farouk&background=0f172a&color=fff&size=256",
+        },
+        {
+            name: "Lina Mahmoud",
+            role: t('role_product'),
+            image: "https://ui-avatars.com/api/?name=Lina+Mahmoud&background=0f172a&color=fff&size=256",
+        },
+    ];
+
     return (
         <section className="py-24 bg-gray-50 border-t border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">
-                        Rencontrez l'Équipe
+                        {t('title')}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Les esprits passionnés derrière la plateforme.
+                        {t('description')}
                     </p>
                 </div>
 

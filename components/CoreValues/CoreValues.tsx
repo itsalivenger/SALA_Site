@@ -2,44 +2,47 @@
 
 import { motion } from "framer-motion";
 import { Heart, Zap, Globe, ShieldCheck } from "lucide-react";
-
-const values = [
-    {
-        icon: Heart,
-        title: "Passion Client",
-        description: "Nous plaçons nos clients au cœur de chaque décision que nous prenons.",
-        color: "bg-red-50 text-red-600"
-    },
-    {
-        icon: Zap,
-        title: "Innovation Rapide",
-        description: "Nous évoluons constamment pour offrir des solutions plus rapides et intelligentes.",
-        color: "bg-amber-50 text-amber-600"
-    },
-    {
-        icon: ShieldCheck,
-        title: "Intégrité Totale",
-        description: "La transparence et l'honnêteté guident toutes nos actions.",
-        color: "bg-emerald-50 text-emerald-600"
-    },
-    {
-        icon: Globe,
-        title: "Impact Durable",
-        description: "Nous nous engageons pour une logistique plus verte et responsable.",
-        color: "bg-primary/5 text-primary"
-    }
-];
+import { useTranslations } from "next-intl";
 
 export default function CoreValues() {
+    const t = useTranslations('CoreValues');
+
+    const values = [
+        {
+            icon: Heart,
+            title: t('value_1_title'),
+            description: t('value_1_desc'),
+            color: "bg-red-50 text-red-600"
+        },
+        {
+            icon: Zap,
+            title: t('value_2_title'),
+            description: t('value_2_desc'),
+            color: "bg-amber-50 text-amber-600"
+        },
+        {
+            icon: ShieldCheck,
+            title: t('value_3_title'),
+            description: t('value_3_desc'),
+            color: "bg-emerald-50 text-emerald-600"
+        },
+        {
+            icon: Globe,
+            title: t('value_4_title'),
+            description: t('value_4_desc'),
+            color: "bg-primary/5 text-primary"
+        }
+    ];
+
     return (
         <section className="py-24 bg-slate-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">
-                        Nos Valeurs
+                        {t('title')}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Ce qui nous définit et nous pousse vers l'avant.
+                        {t('description')}
                     </p>
                 </div>
 

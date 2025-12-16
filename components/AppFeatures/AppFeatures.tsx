@@ -2,46 +2,49 @@
 
 import { motion } from "framer-motion";
 import { User, Truck, CheckCircle2 } from "lucide-react";
-
-const features = [
-    {
-        title: "Pour les Clients",
-        icon: User,
-        description: "Commandez n'importe quoi, n'importe quand.",
-        benefits: [
-            "Suivi en temps réel de vos commandes",
-            "Paiements sécurisés et multiples options",
-            "Support client 24/7",
-            "Tarification transparente"
-        ],
-        color: "bg-primary/5 border-primary/10",
-        iconColor: "text-primary"
-    },
-    {
-        title: "Pour les Chauffeurs",
-        icon: Truck,
-        description: "Gagnez de l'argent selon votre emploi du temps.",
-        benefits: [
-            "Horaires flexibles, soyez votre propre patron",
-            "Revenus garantis et bonus",
-            "Navigation intégrée facile",
-            "Assurance et sécurité incluses"
-        ],
-        color: "bg-emerald-50 border-emerald-100",
-        iconColor: "text-emerald-600"
-    }
-];
+import { useTranslations } from "next-intl";
 
 export default function AppFeatures() {
+    const t = useTranslations('AppFeatures');
+
+    const features = [
+        {
+            title: t('client_title'),
+            icon: User,
+            description: t('client_desc'),
+            benefits: [
+                t('client_benefit_1'),
+                t('client_benefit_2'),
+                t('client_benefit_3'),
+                t('client_benefit_4')
+            ],
+            color: "bg-primary/5 border-primary/10",
+            iconColor: "text-primary"
+        },
+        {
+            title: t('driver_title'),
+            icon: Truck,
+            description: t('driver_desc'),
+            benefits: [
+                t('driver_benefit_1'),
+                t('driver_benefit_2'),
+                t('driver_benefit_3'),
+                t('driver_benefit_4')
+            ],
+            color: "bg-emerald-50 border-emerald-100",
+            iconColor: "text-emerald-600"
+        }
+    ];
+
     return (
         <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">
-                        Une App pour Tous
+                        {t('title')}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Que vous souhaitiez commander ou livrer, Sala a l'outil qu'il vous faut.
+                        {t('description')}
                     </p>
                 </div>
 

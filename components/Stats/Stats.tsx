@@ -2,17 +2,19 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-
-const stats = [
-    { value: "50k+", label: "Livraisons" },
-    { value: "12k+", label: "Utilisateurs Actifs" },
-    { value: "20+", label: "Villes Couvertes" },
-    { value: "4.8/5", label: "Note Clients" },
-];
+import { useTranslations } from "next-intl";
 
 export default function Stats() {
+    const t = useTranslations('Stats');
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+    const stats = [
+        { value: "50k+", label: t('stat_1_label') },
+        { value: "12k+", label: t('stat_2_label') },
+        { value: "20+", label: t('stat_3_label') },
+        { value: "4.8/5", label: t('stat_4_label') },
+    ];
 
     return (
         <section className="py-20 bg-primary text-white relative overflow-hidden">

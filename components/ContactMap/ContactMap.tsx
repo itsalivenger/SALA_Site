@@ -1,13 +1,16 @@
 "use client";
 
 import { MapPin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function ContactMap() {
+    const t = useTranslations('ContactMap');
+
     return (
         <div className="w-full">
             <div className="mb-6 text-center">
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">Notre Localisation</h3>
-                <p className="text-gray-600">Visitez-nous à Casablanca, Maroc</p>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">{t('title')}</h3>
+                <p className="text-gray-600">{t('description')}</p>
             </div>
 
             <div className="w-full h-[450px] rounded-3xl overflow-hidden relative border border-gray-200 shadow-xl">
@@ -29,8 +32,8 @@ export default function ContactMap() {
                         <MapPin className="w-6 h-6 fill-primary" />
                     </div>
                     <div>
-                        <p className="font-bold text-slate-900 text-sm">Sala - Casablanca</p>
-                        <p className="text-xs text-gray-500">Casablanca, Maroc 🇲🇦</p>
+                        <p className="font-bold text-slate-900 text-sm">{t('badge_title')}</p>
+                        <p className="text-xs text-gray-500">{t('badge_subtitle')}</p>
                     </div>
                 </div>
             </div>

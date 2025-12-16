@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function ComplaintsHero() {
+    const t = useTranslations('ComplaintsHero');
+
     return (
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-900 text-white">
             {/* Background Pattern */}
@@ -18,11 +21,10 @@ export default function ComplaintsHero() {
                     transition={{ duration: 0.6 }}
                 >
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-                        Service de <span className="text-red-500">Réclamations</span>
+                        {t('title_part1')} <span className="text-red-500">{t('title_part2')}</span>
                     </h1>
                     <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                        Nous sommes désolés si quelque chose ne s'est pas passé comme prévu.
-                        Remplissez le formulaire ci-dessous et notre équipe de résolution des litiges vous contactera dans les 24 heures.
+                        {t('description')}
                     </p>
                 </motion.div>
             </div>

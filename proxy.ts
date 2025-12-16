@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { jwtVerify } from 'jose';
+import createMiddleware from 'next-intl/middleware';
+import { routing } from '@/i18n/routing';
+
+const intlMiddleware = createMiddleware(routing);
 
 export async function proxy(request: NextRequest) {
     const { pathname } = request.nextUrl;
@@ -41,9 +45,11 @@ export async function proxy(request: NextRequest) {
         }
     }
 
-    return NextResponse.next();
+    // For non-admin routes, apply internationalization
+    return intlMiddleware(request);
 }
 
 export const config = {
-    matcher: ['/admin/:path*'],
+    // Matcher for both Admin routes and Public i18n routes
+    matcher: ['/((?!api|_next|.*\\..*).*)'],
 };

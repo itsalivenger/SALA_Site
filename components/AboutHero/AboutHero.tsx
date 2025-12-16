@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function AboutHero() {
+    const t = useTranslations('AboutHero');
+
     return (
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-900 text-white">
             {/* Background Pattern */}
@@ -18,15 +21,14 @@ export default function AboutHero() {
                     transition={{ duration: 0.6 }}
                 >
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8">
-                        Révolutionner la <span className="text-primary">Logistique</span> <br />
-                        pour un Monde Connecté
+                        {t('title_part1')} <span className="text-primary">{t('title_part2')}</span> <br />
+                        {t('title_part3')}
                     </h1>
                     <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-                        Sala est plus qu'une simple application de livraison. Nous sommes une entreprise technologique dédiée au déplacement des personnes et des produits en toute sécurité, efficacité et fiabilité.
+                        {t('description')}
                     </p>
                 </motion.div>
             </div>
         </section>
     );
 }
-

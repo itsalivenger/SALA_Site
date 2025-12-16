@@ -2,47 +2,50 @@
 
 import { Package, Truck, Clock, Shield, MapPin, Smartphone, Box, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
-
-const allServices = [
-    {
-        title: "Livraison Instantanée",
-        description: "Besoin tout de suite ? Notre service de livraison instantanée achemine vos colis à travers la ville en moins de 60 minutes. Idéal pour les documents, la nourriture et les colis urgents.",
-        icon: Clock,
-        color: "bg-primary/10 text-primary",
-    },
-    {
-        title: "Logistique de Fret Lourd",
-        description: "Du mobilier aux matériaux de construction, notre flotte de camions peut gérer n'importe quelle taille de chargement. Déménageurs professionnels inclus sur demande.",
-        icon: Truck,
-        color: "bg-indigo-100 text-indigo-600",
-    },
-    {
-        title: "VTC Sécurisé",
-        description: "Allez où vous devez aller avec notre communauté de chauffeurs vérifiés. Suivi en temps réel, fonctionnalités SOS et options de covoiturage disponibles.",
-        icon: Shield,
-        color: "bg-emerald-100 text-emerald-600",
-    },
-    {
-        title: "Manutention d'Objets Fragiles",
-        description: "Service spécialisé pour l'électronique, le verre et l'art. Nous utilisons des emballages de protection et une manutention dédiée pour garantir zéro dommage.",
-        icon: Box,
-        color: "bg-orange-100 text-orange-600",
-    },
-    {
-        title: "Transport Interurbain",
-        description: "Expédition à travers le pays ? Nous proposons des trajets longue distance programmés avec un suivi du fret à chaque étape.",
-        icon: MapPin,
-        color: "bg-purple-100 text-purple-600",
-    },
-    {
-        title: "Tableau de Bord Pro",
-        description: "Gérez vos expéditions en toute simplicité. Suivi en temps réel, facturation centralisée et outils de gestion pour optimiser votre logistique.",
-        icon: Briefcase,
-        color: "bg-cyan-100 text-cyan-600",
-    },
-];
+import { useTranslations } from "next-intl";
 
 export default function ServicesList() {
+    const t = useTranslations('ServicesList');
+
+    const allServices = [
+        {
+            title: t('service_1_title'),
+            description: t('service_1_desc'),
+            icon: Clock,
+            color: "bg-primary/10 text-primary",
+        },
+        {
+            title: t('service_2_title'),
+            description: t('service_2_desc'),
+            icon: Truck,
+            color: "bg-indigo-100 text-indigo-600",
+        },
+        {
+            title: t('service_3_title'),
+            description: t('service_3_desc'),
+            icon: Shield,
+            color: "bg-emerald-100 text-emerald-600",
+        },
+        {
+            title: t('service_4_title'),
+            description: t('service_4_desc'),
+            icon: Box,
+            color: "bg-orange-100 text-orange-600",
+        },
+        {
+            title: t('service_5_title'),
+            description: t('service_5_desc'),
+            icon: MapPin,
+            color: "bg-purple-100 text-purple-600",
+        },
+        {
+            title: t('service_6_title'),
+            description: t('service_6_desc'),
+            icon: Briefcase,
+            color: "bg-cyan-100 text-cyan-600",
+        },
+    ];
+
     return (
         <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

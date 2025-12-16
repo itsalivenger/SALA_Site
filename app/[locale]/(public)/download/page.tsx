@@ -1,11 +1,17 @@
 import DownloadHero from "@/components/DownloadHero/DownloadHero";
 import AppFeatures from "@/components/AppFeatures/AppFeatures";
 import QRCodeSection from "@/components/QRCodeSection/QRCodeSection";
+import { getTranslations } from 'next-intl/server';
 
-export const metadata = {
-    title: "Télécharger l'App - Sala",
-    description: "Téléchargez l'application Sala pour iOS et Android. Livraison, VTC et services à la demande dans une seule application.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'DownloadMetadata' });
+
+    return {
+        title: t('title'),
+        description: t('description')
+    };
+}
 
 export default function DownloadPage() {
     return (

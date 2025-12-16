@@ -2,24 +2,27 @@
 
 import { motion } from "framer-motion";
 import { Phone, PackageSearch, Truck, CheckCheck } from "lucide-react";
-
-const steps = [
-    { icon: Phone, title: "Commande", text: "Réservez via l'app en quelques clics." },
-    { icon: PackageSearch, title: "Prise en charge", text: "Un chauffeur arrive instantanément." },
-    { icon: Truck, title: "Transport", text: "Suivi GPS en temps réel du trajet." },
-    { icon: CheckCheck, title: "Livraison", text: "Confirmation par code sécurisé." },
-];
+import { useTranslations } from "next-intl";
 
 export default function ServiceProcess() {
+    const t = useTranslations('ServiceProcess');
+
+    const steps = [
+        { icon: Phone, title: t('step_1_title'), text: t('step_1_text') },
+        { icon: PackageSearch, title: t('step_2_title'), text: t('step_2_text') },
+        { icon: Truck, title: t('step_3_title'), text: t('step_3_text') },
+        { icon: CheckCheck, title: t('step_4_title'), text: t('step_4_text') },
+    ];
+
     return (
         <section className="py-24 bg-white border-t border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">
-                        Comment nous procédons
+                        {t('title')}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Un processus transparent et sécurisé de A à Z.
+                        {t('description')}
                     </p>
                 </div>
 

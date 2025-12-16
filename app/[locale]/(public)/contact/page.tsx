@@ -2,11 +2,17 @@ import ContactHero from "@/components/ContactHero/ContactHero";
 import ContactInfo from "@/components/ContactInfo/ContactInfo";
 import ContactForm from "@/components/ContactForm/ContactForm";
 import ContactMap from "@/components/ContactMap/ContactMap";
+import { getTranslations } from 'next-intl/server';
 
-export const metadata = {
-    title: "Contactez-Nous - Sala",
-    description: "Entrez en contact avec l'équipe Sala. Nous sommes là pour répondre à vos questions et discuter de vos besoins logistiques.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'ContactMetadata' });
+
+    return {
+        title: t('title'),
+        description: t('description')
+    };
+}
 
 export default function ContactPage() {
     return (

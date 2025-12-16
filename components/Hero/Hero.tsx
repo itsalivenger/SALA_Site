@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ArrowRight, Smartphone } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+    const t = useTranslations('Hero');
+
     return (
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-b from-primary/5 to-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -18,16 +21,15 @@ export default function Hero() {
                     >
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
                             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                            Disponible sur iOS & Android
+                            {t('tag')}
                         </div>
 
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
-                            Les seules applications dont vous avez besoin pour <span className="text-primary">déplacer</span> quoi que ce soit.
+                            {t('title_part1')} <span className="text-primary">{t('title_part2')}</span> {t('title_part3')}
                         </h1>
 
                         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                            Profitez d'une logistique, de services de VTC et de livraison fluides, le tout dans un seul écosystème.
-                            Connecter les clients avec des chauffeurs de confiance instantanément.
+                            {t('description')}
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -36,13 +38,13 @@ export default function Hero() {
                                 className="inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all bg-slate-900 rounded-xl hover:bg-slate-800 hover:shadow-lg shadow-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900"
                             >
                                 <Smartphone className="w-5 h-5 mr-2" />
-                                Télécharger App Client
+                                {t('download_client')}
                             </Link>
                             <Link
                                 href="/download"
                                 className="inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-slate-900 transition-all bg-white border-2 border-slate-200 rounded-xl hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-200"
                             >
-                                Devenir Chauffeur
+                                {t('become_driver')}
                                 <ArrowRight className="w-5 h-5 ml-2" />
                             </Link>
                         </div>
@@ -54,11 +56,11 @@ export default function Hero() {
                                         <div key={i} className={`w-8 h-8 rounded-full border-2 border-white bg-gray-${i * 200 + 100}`} />
                                     ))}
                                 </div>
-                                <span>10k+ Téléchargements</span>
+                                <span>{t('stats_downloads')}</span>
                             </div>
                             <div className="h-4 w-px bg-gray-300" />
                             <div className="flex items-center gap-1">
-                                ⭐ 4.9 Note
+                                ⭐ {t('stats_rating')}
                             </div>
                         </div>
                     </motion.div>
@@ -108,8 +110,8 @@ export default function Hero() {
                             <div className="flex items-center gap-3">
                                 <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">✔</div>
                                 <div>
-                                    <p className="font-bold text-slate-900">Le chauffeur est arrivé</p>
-                                    <p className="text-xs text-gray-500">2 min restantes</p>
+                                    <p className="font-bold text-slate-900">{t('card_arrived')}</p>
+                                    <p className="text-xs text-gray-500">{t('card_time')}</p>
                                 </div>
                             </div>
                         </motion.div>

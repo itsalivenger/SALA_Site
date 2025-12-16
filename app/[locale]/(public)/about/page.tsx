@@ -3,11 +3,17 @@ import MissionVision from "@/components/MissionVision/MissionVision";
 import Team from "@/components/Team/Team";
 import OurStory from "@/components/OurStory/OurStory";
 import CoreValues from "@/components/CoreValues/CoreValues";
+import { getTranslations } from 'next-intl/server';
 
-export const metadata = {
-    title: "À Propos - Sala",
-    description: "En savoir plus sur la mission, la vision de Sala et l'équipe qui pilote la révolution logistique.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale, namespace: 'AboutMetadata' });
+
+    return {
+        title: t('title'),
+        description: t('description')
+    };
+}
 
 export default function AboutPage() {
     return (

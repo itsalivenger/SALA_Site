@@ -1,14 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { Menu, X, ChevronRight, Download, ChevronDown } from "lucide-react";
+import { useState } from "react";
+import { Link, usePathname, useRouter } from "@/i18n/routing";
+import { useTranslations, useLocale } from "next-intl";
+import { Menu, X, ChevronRight, Download, ChevronDown, Check } from "lucide-react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
+  const t = useTranslations('Navbar');
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest > 50 && !scrolled) {
@@ -18,11 +23,16 @@ export default function Navbar() {
     }
   });
 
+  const handleLanguageChange = (nextLocale: string) => {
+    router.replace(pathname, { locale: nextLocale });
+  };
+
   const navLinks = [
-    { name: "Accueil", href: "/" },
-    { name: "À Propos", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
+    { name: t('home'), href: "/" },
+    { name: t('about'), href: "/about" },
+    { name: t('services'), href: "/services" },
+    { name: t('contact'), href: "/contact" },
+    { name: t('complaints'), href: "/complaints" },
   ];
 
   return (
@@ -55,7 +65,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.href}
                   href={link.href}
                   className="relative group px-5 py-2"
                 >
@@ -76,24 +86,36 @@ export default function Navbar() {
                   : "bg-slate-900 text-white hover:bg-slate-800 shadow-lg shadow-primary/20"
                   }`}
               >
-                <span>Télécharger</span>
+                <span>{t('download')}</span>
                 <Download className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
               </Link>
 
               <div className="relative group">
                 <button className={`flex items-center gap-1 font-semibold transition-colors ${!scrolled ? "text-white hover:text-white/80" : "text-gray-600 hover:text-primary"}`}>
-                  <span className="uppercase">FR</span>
+                  <span className="uppercase">{locale}</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
-                <div className="absolute top-full right-0 pt-4 w-32 hidden group-hover:block">
-                  <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2">
-                    <button className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors cursor-pointer">
+                <div className={`absolute top-full pt-4 w-32 hidden group-hover:block ${locale === 'ar' ? 'left-0' : 'right-0'}`}>
+                  <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2 overflow-hidden">
+                    <button
+                      onClick={() => handleLanguageChange('fr')}
+                      className={`w-full text-left px-4 py-2 text-sm transition-colors cursor-pointer flex justify-between items-center ${locale === 'fr' ? 'text-primary bg-primary/5 font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'}`}
+                    >
                       Français
+                      {locale === 'fr' && <Check className="w-3 h-3" />}
                     </button>
-                    <button className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors cursor-pointer">
+                    <button
+                      onClick={() => handleLanguageChange('en')}
+                      className={`w-full text-left px-4 py-2 text-sm transition-colors cursor-pointer flex justify-between items-center ${locale === 'en' ? 'text-primary bg-primary/5 font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'}`}
+                    >
                       English
+                      {locale === 'en' && <Check className="w-3 h-3" />}
                     </button>
-                    <button className="w-full text-right px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors font-arabic cursor-pointer">
+                    <button
+                      onClick={() => handleLanguageChange('ar')}
+                      className={`w-full text-right px-4 py-2 text-sm transition-colors cursor-pointer flex justify-between items-center font-arabic ${locale === 'ar' ? 'text-primary bg-primary/5 font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'}`}
+                    >
+                      {locale === 'ar' && <Check className="w-3 h-3" />}
                       العربية
                     </button>
                   </div>
@@ -127,7 +149,7 @@ export default function Navbar() {
               <div className="flex flex-col space-y-4">
                 {navLinks.map((link, index) => (
                   <motion.div
-                    key={link.name}
+                    key={link.href}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + index * 0.1 }}
@@ -143,6 +165,17 @@ export default function Navbar() {
                 ))}
 
                 <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.6 }}
+                  className="flex gap-4 pt-4 border-t border-gray-100 mt-4"
+                >
+                  <button onClick={() => handleLanguageChange('fr')} className={`px-4 py-2 rounded-lg text-sm font-bold ${locale === 'fr' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-600'}`}>FR</button>
+                  <button onClick={() => handleLanguageChange('en')} className={`px-4 py-2 rounded-lg text-sm font-bold ${locale === 'en' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-600'}`}>EN</button>
+                  <button onClick={() => handleLanguageChange('ar')} className={`px-4 py-2 rounded-lg text-sm font-bold ${locale === 'ar' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-600'}`}>AR</button>
+                </motion.div>
+
+                <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 }}
@@ -153,7 +186,7 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                     className="flex w-full items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-slate-900 text-white font-bold text-lg shadow-xl shadow-blue-900/20"
                   >
-                    <span>Télécharger l'App</span>
+                    <span>{t('download')}</span>
                     <ChevronRight className="w-5 h-5" />
                   </Link>
                 </motion.div>

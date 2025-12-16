@@ -1,0 +1,399 @@
+{
+    "Navbar": {
+        "home": "Accueil",
+        "about": "À Propos",
+        "services": "Services",
+        "contact": "Contact",
+        "complaints": "Aide",
+        "download": "Télécharger App"
+    },
+    "Hero": {
+        "tag": "Disponible sur iOS & Android",
+        "title_part1": "Les seules applications dont vous avez besoin pour",
+        "title_part2": "déplacer",
+        "title_part3": "quoi que ce soit.",
+        "description": "Profitez d'une logistique, de services de VTC et de livraison fluides, le tout dans un seul écosystème. Connecter les clients avec des chauffeurs de confiance instantanément.",
+        "download_client": "Télécharger App Client",
+        "become_driver": "Devenir Chauffeur",
+        "stats_downloads": "10k+ Téléchargements",
+        "stats_rating": "4.9 Note",
+        "card_arrived": "Le chauffeur est arrivé",
+        "card_time": "2 min restantes"
+    },
+    "AppShowcase": {
+        "badge": "L'expérience Mobile",
+        "title_part1": "Une interface conçue pour",
+        "title_part2": "la simplicité",
+        "description": "Notre application a été pensée pour être intuitive et puissante. Gérez vos commandes, suivez vos livraisons et communiquez avec vos chauffeurs en quelques clics.",
+        "feature_1_title": "Suivi en temps réel",
+        "feature_1_desc": "Visualisez votre livreur sur la carte à chaque instant.",
+        "feature_2_title": "Notifications instantanées",
+        "feature_2_desc": "Restez informé de l'avancement de votre mission.",
+        "feature_3_title": "Paiements fluides",
+        "feature_3_desc": "Payez en espèces ou par carte en toute sécurité."
+    },
+    "ServicesPreview": {
+        "title": "Nos Services De Base",
+        "description": "Tout ce dont vous avez besoin, livré avec soin. Nous comblons le fossé entre efficacité et fiabilité.",
+        "service_1_title": "Livraison Instantanée",
+        "service_1_desc": "Faites livrer vos colis localement en quelques minutes. Rapide, sécurisé et traçable.",
+        "service_2_title": "Logistique Lourde",
+        "service_2_desc": "Besoin de déplacer des meubles ou du fret ? Nos camions sont prêts pour les travaux lourds.",
+        "service_3_title": "Transport Sécurisé",
+        "service_3_desc": "Voyagez avec des chauffeurs vérifiés. Votre sécurité est notre priorité absolue sur chaque trajet.",
+        "service_4_title": "Manutention de Colis",
+        "service_4_desc": "Soin particulier pour les articles fragiles. Nous assurons que vos biens arrivent en parfait état."
+    },
+    "Stats": {
+        "stat_1_label": "Livraisons",
+        "stat_2_label": "Utilisateurs Actifs",
+        "stat_3_label": "Villes Couvertes",
+        "stat_4_label": "Note Clients"
+    },
+    "HowItWorks": {
+        "title": "Comment ça marche",
+        "description": "Des étapes simples pour avancer. Nous avons rendu cela aussi facile que 1-2-3.",
+        "step_1_title": "Téléchargez l'App",
+        "step_1_desc": "Obtenez Sala pour Android ou iOS. Créez votre compte en quelques secondes.",
+        "step_2_title": "Passez votre commande",
+        "step_2_desc": "Choisissez votre service, définissez le lieu et confirmez les détails.",
+        "step_3_title": "Détendez-vous",
+        "step_3_desc": "Suivez votre livraison ou votre chauffeur en temps réel jusqu'à la fin de la mission."
+    },
+    "Testimonials": {
+        "badge": "Avis Clients",
+        "title_part1": "Ils parlent de nous",
+        "title_part2": "mieux que personne.",
+        "description": "Découvrez pourquoi des milliers d'utilisateurs et d'entreprises choisissent Sala pour leurs besoins quotidiens. Une satisfaction client au cœur de notre mission.",
+        "stats_users": "Utilisateurs heureux",
+        "stats_rating": "Note moyenne",
+        "review_1_role": "Cliente Régulière",
+        "review_1_content": "Sala a complètement changé la façon dont j'envoie des cadeaux à ma famille. Rapide et sûr !",
+        "review_2_role": "E-commerçant",
+        "review_2_content": "Mes clients sont ravis de la livraison express. Sala est un partenaire clé pour ma croissance.",
+        "review_3_role": "Étudiante",
+        "review_3_content": "L'application est super intuitive. Je l'utilise pour mes trajets quotidiens.",
+        "review_4_role": "Boutique Mode",
+        "review_4_content": "Le service client est très réactif. Une solution fiable pour les pros."
+    },
+    "AboutMetadata": {
+        "title": "À Propos - Sala",
+        "description": "En savoir plus sur la mission, la vision de Sala et l'équipe qui pilote la révolution logistique."
+    },
+    "AboutHero": {
+        "title_part1": "Révolutionner la",
+        "title_part2": "Logistique",
+        "title_part3": "pour un Monde Connecté",
+        "description": "Sala est plus qu'une simple application de livraison. Nous sommes une entreprise technologique dédiée au déplacement des personnes et des produits en toute sécurité, efficacité et fiabilité."
+    },
+    "MissionVision": {
+        "mission_title": "Notre Mission",
+        "mission_desc": "Autonomiser les entreprises et les particuliers en fournissant des solutions logistiques fluides, accessibles et fiables. Nous nous efforçons de réduire les frictions dans le transport et de rendre la livraison instantanée pour tout le monde, partout.",
+        "vision_title": "Notre Vision",
+        "vision_desc": "Devenir la super-application leader de la région pour la mobilité et la logistique, créant un écosystème où les chauffeurs prospèrent, les entreprises se développent et les clients bénéficient d'une commodité inégalée."
+    },
+    "OurStory": {
+        "title": "Notre Histoire",
+        "description": "De simples débuts à une révolution logistique.",
+        "milestone_2021_title": "La Genèse",
+        "milestone_2021_desc": "L'idée de Sala naît d'un besoin de simplifier la logistique urbaine.",
+        "milestone_2022_title": "La Fondation",
+        "milestone_2022_desc": "Lancement initial à Alger avec une flotte de 10 chauffeurs.",
+        "milestone_2023_title": "L'Expansion",
+        "milestone_2023_desc": "Ouverture des opérations à Oran et lancement de l'offre B2B.",
+        "milestone_2024_title": "Innovation",
+        "milestone_2024_desc": "Intégration de l'IA pour l'optimisation des trajets et lancement de Sala Pay.",
+        "milestone_2025_title": "Écosystème Vert",
+        "milestone_2025_desc": "Transition vers une flotte hybride et électrique pour réduire l'empreinte carbone.",
+        "milestone_future_title": "Vision Globe",
+        "milestone_future_desc": "Expansion internationale et couverture de toute la région MENA."
+    },
+    "CoreValues": {
+        "title": "Nos Valeurs",
+        "description": "Ce qui nous définit et nous pousse vers l'avant.",
+        "value_1_title": "Passion Client",
+        "value_1_desc": "Nous plaçons nos clients au cœur de chaque décision que nous prenons.",
+        "value_2_title": "Innovation Rapide",
+        "value_2_desc": "Nous évoluons constamment pour offrir des solutions plus rapides et intelligentes.",
+        "value_3_title": "Intégrité Totale",
+        "value_3_desc": "La transparence et l'honnêteté guident toutes nos actions.",
+        "value_4_title": "Impact Durable",
+        "value_4_desc": "Nous nous engageons pour une logistique plus verte et responsable."
+    },
+    "Team": {
+        "title": "Rencontrez l'Équipe",
+        "description": "Les esprits passionnés derrière la plateforme.",
+        "role_ceo": "PDG et Fondateur",
+        "role_coo": "Directrice des Opérations",
+        "role_eng": "Responsable Ingénierie",
+        "role_product": "Chef de Produit"
+    },
+    "ServicesMetadata": {
+        "title": "Nos Services - Sala",
+        "description": "Explorez notre large gamme de services de livraison, de transport et de logistique disponibles sur l'application Sala."
+    },
+    "ServicesHero": {
+        "badge": "Solutions Complètes",
+        "title_part1": "Une Solution pour",
+        "title_part2": "Chaque Besoin",
+        "description": "De la livraison express locale au transport de fret interurbain, Sala vous offre une gamme complète de services logistiques adaptés à vos exigences.",
+        "stat_1": "Express 1h",
+        "stat_2": "Fret Lourd",
+        "stat_3": "B2B & B2C"
+    },
+    "ServicesList": {
+        "service_1_title": "Livraison Instantanée",
+        "service_1_desc": "Besoin tout de suite ? Notre service de livraison instantanée achemine vos colis à travers la ville en moins de 60 minutes. Idéal pour les documents, la nourriture et les colis urgents.",
+        "service_2_title": "Logistique de Fret Lourd",
+        "service_2_desc": "Du mobilier aux matériaux de construction, notre flotte de camions peut gérer n'importe quelle taille de chargement. Déménageurs professionnels inclus sur demande.",
+        "service_3_title": "VTC Sécurisé",
+        "service_3_desc": "Allez où vous devez aller avec notre communauté de chauffeurs vérifiés. Suivi en temps réel, fonctionnalités SOS et options de covoiturage disponibles.",
+        "service_4_title": "Manutention d'Objets Fragiles",
+        "service_4_desc": "Service spécialisé pour l'électronique, le verre et l'art. Nous utilisons des emballages de protection et une manutention dédiée pour garantir zéro dommage.",
+        "service_5_title": "Transport Interurbain",
+        "service_5_desc": "Expédition à travers le pays ? Nous proposons des trajets longue distance programmés avec un suivi du fret à chaque étape.",
+        "service_6_title": "Tableau de Bord Pro",
+        "service_6_desc": "Gérez vos expéditions en toute simplicité. Suivi en temps réel, facturation centralisée et outils de gestion pour optimiser votre logistique."
+    },
+    "BusinessSolutions": {
+        "badge": "Sala Business",
+        "title_part1": "Des solutions puissantes pour",
+        "title_part2": "les entreprises",
+        "description": "Que vous soyez une petite boutique ou une grande entreprise, Sala vous offre les outils nécessaires pour passer à la vitesse supérieure.",
+        "cta_button": "Découvrir Sala Business",
+        "solution_1_title": "Gestion de Flotte",
+        "solution_1_desc": "Externalisez votre logistique. Nous gérons vos livraisons pendant que vous vous concentrez sur votre cœur de métier.",
+        "solution_2_title": "Compte Professionnel",
+        "solution_2_desc": "Un espace dédié pour gérer toutes vos livraisons professionnelles en un seul endroit.",
+        "solution_3_title": "Analytics Avancés",
+        "solution_3_desc": "Accédez à des rapports détaillés sur vos performances de livraison et optimisez vos coûts."
+    },
+    "ServiceProcess": {
+        "title": "Comment nous procédons",
+        "description": "Un processus transparent et sécurisé de A à Z.",
+        "step_1_title": "Commande",
+        "step_1_text": "Réservez via l'app en quelques clics.",
+        "step_2_title": "Prise en charge",
+        "step_2_text": "Un chauffeur arrive instantanément.",
+        "step_3_title": "Transport",
+        "step_3_text": "Suivi GPS en temps réel du trajet.",
+        "step_4_title": "Livraison",
+        "step_4_text": "Confirmation par code sécurisé."
+    },
+    "ServiceCTA": {
+        "title": "Prêt à commencer ?",
+        "description": "Accédez à tous ces services directement depuis votre poche. Téléchargez l'application Sala dès aujourd'hui et découvrez le futur de la logistique.",
+        "btn_download": "Télécharger l'App",
+        "btn_contact": "Contacter les Ventes"
+    },
+    "ContactMetadata": {
+        "title": "Contactez-Nous - Sala",
+        "description": "Entrez en contact avec l'équipe Sala. Nous sommes là pour répondre à vos questions et discuter de vos besoins logistiques."
+    },
+    "ContactHero": {
+        "title_part1": "Contactez-",
+        "title_part2": "Nous",
+        "description": "Une question ? Une suggestion ? Ou simplement envie de dire bonjour ? Notre équipe est là pour vous écouter et vous répondre."
+    },
+    "ContactInfo": {
+        "title": "Informations",
+        "office_title": "Notre Bureau",
+        "office_address_1": "Boulevard Mohammed V",
+        "office_address_2": "Centre Ville, Casablanca",
+        "office_address_3": "Maroc 🇲🇦",
+        "phone_title": "Téléphone",
+        "phone_subtitle": "(Lun-Ven de 9h à 18h)",
+        "email_title": "Email",
+        "follow_us": "Suivez-nous"
+    },
+    "ContactForm": {
+        "title": "Envoyez-nous un message",
+        "label_name": "Nom complet",
+        "placeholder_name": "Votre nom",
+        "label_email": "Email",
+        "placeholder_email": "votre@email.com",
+        "label_subject": "Sujet",
+        "placeholder_subject": "Sélectionnez un sujet",
+        "option_support": "Support Technique",
+        "option_sales": "Commercial / Ventes",
+        "option_partnership": "Partenariats",
+        "option_other": "Autre",
+        "label_message": "Message",
+        "placeholder_message": "Comment pouvons-nous vous aider ?",
+        "btn_submit": "Envoyer le message"
+    },
+    "ContactMap": {
+        "title": "Notre Localisation",
+        "description": "Visitez-nous à Casablanca, Maroc",
+        "badge_title": "Sala - Casablanca",
+        "badge_subtitle": "Casablanca, Maroc 🇲🇦"
+    },
+    "Footer": {
+        "brand_desc": "Votre partenaire de confiance pour les livraisons et le transport. Nous connectons le monde, un colis à la fois.",
+        "col_company": "Entreprise",
+        "link_about": "À Propos",
+        "link_careers": "Carrières",
+        "link_blog": "Blog",
+        "link_press": "Presse",
+        "col_support": "Support",
+        "link_contact": "Centre de Contact",
+        "link_faq": "FAQs",
+        "link_complaints": "Signaler un Problème",
+        "link_terms": "Conditions d'Utilisation",
+        "link_privacy": "Politique de Confidentialité",
+        "col_quick": "Liens Rapides",
+        "link_download": "📱 Télécharger l'App",
+        "link_services": "Nos Services",
+        "link_who_we_are": "Qui Sommes-Nous",
+        "copyright": "© {year} Sala Company. Tous droits réservés."
+    },
+    "DownloadMetadata": {
+        "title": "Télécharger l'App - Sala",
+        "description": "Téléchargez l'application Sala pour iOS et Android. Livraison, VTC et services à la demande dans une seule application."
+    },
+    "DownloadHero": {
+        "title_part1": "Téléchargez Sala et",
+        "title_part2": "Bougez Librement",
+        "description": "L'application ultime pour la livraison, le transport et les services à la demande. Disponible dès maintenant sur iOS et Android.",
+        "download_on": "Télécharger sur",
+        "available_on": "DISPONIBLE SUR"
+    },
+    "AppFeatures": {
+        "title": "Une App pour Tous",
+        "description": "Que vous souhaitiez commander ou livrer, Sala a l'outil qu'il vous faut.",
+        "client_title": "Pour les Clients",
+        "client_desc": "Commandez n'importe quoi, n'importe quand.",
+        "client_benefit_1": "Suivi en temps réel de vos commandes",
+        "client_benefit_2": "Paiements sécurisés et multiples options",
+        "client_benefit_3": "Support client 24/7",
+        "client_benefit_4": "Tarification transparente",
+        "driver_title": "Pour les Chauffeurs",
+        "driver_desc": "Gagnez de l'argent selon votre emploi du temps.",
+        "driver_benefit_1": "Horaires flexibles, soyez votre propre patron",
+        "driver_benefit_2": "Revenus garantis et bonus",
+        "driver_benefit_3": "Navigation intégrée facile",
+        "driver_benefit_4": "Assurance et sécurité incluses"
+    },
+    "QRCodeSection": {
+        "title": "Scannez pour télécharger",
+        "description": "Pointez simplement l'appareil photo de votre téléphone vers le code QR pour télécharger l'application Sala instantanément.",
+        "scan_me": "SCANNEZ-MOI"
+    },
+    "FAQMetadata": {
+        "title": "FAQ - Sala",
+        "description": "Réponses aux questions les plus fréquentes sur l'utilisation de Sala, les livraisons, le transport et les paiements."
+    },
+    "FAQHero": {
+        "title_part1": "Foire Aux",
+        "title_part2": "Questions",
+        "description": "Vous avez des questions ? Nous avons les réponses. Découvrez tout ce que vous devez savoir sur Sala."
+    },
+    "FAQList": {
+        "general_title": "Général",
+        "general_q1_question": "Qu'est-ce que Sala ?",
+        "general_q1_answer": "Sala est une super-application logistique qui regroupe la livraison, le transport de fret, le VTC et d'autres services à la demande en une seule plateforme.",
+        "general_q2_question": "Dans quelles villes Sala est-elle disponible ?",
+        "general_q2_answer": "Actuellement, nous opérons principalement à Alger, Oran et Constantine, avec une expansion prévue sur tout le territoire national très prochainement.",
+        "general_q3_question": "Comment télécharger l'application ?",
+        "general_q3_answer": "Vous pouvez télécharger l'application Sala gratuitement sur l'App Store (iOS) et Google Play Store (Android).",
+        "deliveries_title": "Livraisons & Commandes",
+        "deliveries_q1_question": "Combien coûte une livraison ?",
+        "deliveries_q1_answer": "Le prix dépend de la distance, du type de véhicule choisi et de l'urgence. Vous pouvez obtenir une estimation précise dans l'application avant de confirmer votre commande.",
+        "deliveries_q2_question": "Puis-je suivre ma commande ?",
+        "deliveries_q2_answer": "Oui, absolument. Sala offre un suivi en temps réel par GPS pour toutes vos livraisons et courses, du point de départ à l'arrivée.",
+        "deliveries_q3_question": "Que faire si mon colis est endommagé ?",
+        "deliveries_q3_answer": "Nous prenons grand soin de vos objets. Si un incident survient, contactez immédiatement notre service client via la rubrique 'Réclamations' de l'application ou du site web pour une prise en charge rapide.",
+        "account_title": "Compte & Paiement",
+        "account_q1_question": "Quels moyens de paiement acceptez-vous ?",
+        "account_q1_answer": "Nous acceptons les espèces à la livraison, ainsi que les paiements électroniques via carte CIB et Edahabia directement dans l'application.",
+        "account_q2_question": "Comment devenir chauffeur partenaire ?",
+        "account_q2_answer": "Téléchargez l'application 'Sala Driver', inscrivez-vous et soumettez les documents requis. Notre équipe examinera votre dossier sous 48h."
+    },
+    "ComplaintsMetadata": {
+        "title": "Réclamations - Sala",
+        "description": "Signalez un problème avec une commande ou un service. Nous prenons vos retours très au sérieux."
+    },
+    "ComplaintsHero": {
+        "title_part1": "Service de",
+        "title_part2": "Réclamations",
+        "description": "Nous sommes désolés si quelque chose ne s'est pas passé comme prévu. Remplissez le formulaire ci-dessous et notre équipe de résolution des litiges vous contactera dans les 24 heures."
+    },
+    "ComplaintsForm": {
+        "alert_message": "Veuillez fournir autant de détails que possible pour nous aider à résoudre votre problème rapidement.",
+        "label_name": "Nom complet",
+        "placeholder_name": "Votre nom",
+        "label_email": "Email",
+        "placeholder_email": "votre@email.com",
+        "label_phone": "Téléphone",
+        "placeholder_phone": "Votre numéro",
+        "label_order_id": "N° de Commande (Optionnel)",
+        "placeholder_order_id": "#123456",
+        "label_category": "Type de problème",
+        "placeholder_category": "Sélectionnez une catégorie",
+        "option_late": "Retard de livraison",
+        "option_damaged": "Colis endommagé",
+        "option_missing": "Colis manquant",
+        "option_driver": "Comportement du chauffeur",
+        "option_app": "Problème technique (App)",
+        "option_other": "Autre",
+        "label_description": "Description détaillée",
+        "placeholder_description": "Décrivez ce qui s'est passé...",
+        "label_evidence": "Preuves (Photos/Captures d'écran)",
+        "upload_text": "Cliquez pour télécharger ou glissez-déposez des fichiers ici",
+        "upload_hint": "JPG, PNG, PDF (Max 5MB)",
+        "btn_submit": "Soumettre la réclamation"
+    },
+    "LegalDocument": {
+        "last_updated": "Dernière mise à jour : {date}"
+    },
+    "PrivacyPage": {
+        "title": "Politique de Confidentialité",
+        "description": "Comment Sala collecte, utilise et protège vos données personnelles.",
+        "section1_title": "1. Introduction",
+        "section1_content": "Chez Sala, nous prenons votre vie privée très au sérieux. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous utilisez notre application mobile et notre site web.",
+        "section2_title": "2. Informations que nous collectons",
+        "section2_content": "Nous collectons les types d'informations suivants pour fournir et améliorer nos services :",
+        "section2_list_1": "<strong>Informations personnelles :</strong> Nom, adresse email, numéro de téléphone, adresse de livraison.",
+        "section2_list_2": "<strong>Données de localisation :</strong> Pour permettre le suivi des livraisons et des trajets en temps réel.",
+        "section2_list_3": "<strong>Données de transaction :</strong> Détails des commandes, historique des achats et informations de paiement.",
+        "section2_list_4": "<strong>Informations techniques :</strong> Type d'appareil, adresse IP, système d'exploitation.",
+        "section3_title": "3. Utilisation de vos données",
+        "section3_content": "Vos données sont utilisées pour :",
+        "section3_list_1": "Traiter et livrer vos commandes.",
+        "section3_list_2": "Gérer votre compte et fournir un support client.",
+        "section3_list_3": "Améliorer nos services et développer de nouvelles fonctionnalités.",
+        "section3_list_4": "Vous envoyer des mises à jour importantes et des offres promotionnelles (avec votre consentement).",
+        "section4_title": "4. Partage des données",
+        "section4_content": "Nous ne vendons pas vos données personnelles. Nous pouvons partager vos informations avec :",
+        "section4_list_1": "<strong>Les chauffeurs partenaires :</strong> Pour effectuer la livraison ou le transport.",
+        "section4_list_2": "<strong>Les prestataires de services :</strong> Pour le traitement des paiements et l'hébergement des données.",
+        "section4_list_3": "<strong>Les autorités légales :</strong> Si la loi l'exige.",
+        "section5_title": "5. Sécurité",
+        "section5_content": "Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles appropriées pour protéger vos données contre l'accès non autorisé, la modification ou la destruction.",
+        "section6_title": "6. Vos droits",
+        "section6_content": "Vous avez le droit d'accéder, de corriger ou de supprimer vos données personnelles. Vous pouvez exercer ces droits directement dans les paramètres de l'application ou en nous contactant à privacy@sala.dz."
+    },
+    "TermsPage": {
+        "title": "Conditions Générales d'Utilisation",
+        "description": "Les règles et conditions régissant l'utilisation de la plateforme Sala.",
+        "section1_title": "1. Acceptation des conditions",
+        "section1_content": "En téléchargeant ou en utilisant l'application Sala, vous acceptez d'être lié par ces conditions. Si vous n'acceptez pas ces termes, veuillez ne pas utiliser nos services.",
+        "section2_title": "2. Services",
+        "section2_content": "Sala est une plateforme technologique facilitant la mise en relation entre des utilisateurs cherchant des services de logistique/transport et des prestataires indépendants (chauffeurs/livreurs). Sala ne fournit pas directement de services de transport.",
+        "section3_title": "3. Compte Utilisateur",
+        "section3_content": "Pour utiliser la plupart des fonctionnalités, vous devez créer un compte. Vous êtes responsable de la confidentialité de vos identifiants et de toutes les activités effectuées sous votre compte.",
+        "section4_title": "4. Comportement de l'utilisateur",
+        "section4_content": "Vous vous engagez à :",
+        "section4_list_1": "Utiliser les services uniquement à des fins légales.",
+        "section4_list_2": "Ne pas causer de nuisances ou de dommages aux prestataires tiers.",
+        "section4_list_3": "Ne pas utiliser l'application pour transporter des marchandises illégales ou dangereuses.",
+        "section5_title": "5. Paiements",
+        "section5_content": "Les tarifs sont indiqués dans l'application avant la commande. Vous acceptez de payer tous les frais associés aux services que vous demandez. Sala se réserve le droit de modifier les tarifs à tout moment.",
+        "section6_title": "6. Responsabilité",
+        "section6_content": "Dans les limites permises par la loi, Sala ne pourra être tenue responsable des dommages indirects, accessoires ou consécutifs résultant de l'utilisation des services.",
+        "section7_title": "7. Modifications",
+        "section7_content": "Nous pouvons mettre à jour ces conditions de temps à autre. Les modifications entreront en vigueur dès leur publication sur cette page.",
+        "section8_title": "8. Contact",
+        "section8_content": "Pour toute question concernant ces conditions, veuillez nous contacter à legal@sala.dz."
+    }
+}

@@ -1,26 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const milestones = [
-    { year: "2021", title: "La Genèse", description: "L'idée de Sala naît d'un besoin de simplifier la logistique urbaine." },
-    { year: "2022", title: "La Fondation", description: "Lancement initial à Alger avec une flotte de 10 chauffeurs." },
-    { year: "2023", title: "L'Expansion", description: "Ouverture des opérations à Oran et lancement de l'offre B2B." },
-    { year: "2024", title: "Innovation", description: "Intégration de l'IA pour l'optimisation des trajets et lancement de Sala Pay." },
-    { year: "2025", title: "Écosystème Vert", description: "Transition vers une flotte hybride et électrique pour réduire l'empreinte carbone." },
-    { year: "Futur", title: "Vision Globe", description: "Expansion internationale et couverture de toute la région MENA." },
-];
+import { useTranslations } from "next-intl";
 
 export default function OurStory() {
+    const t = useTranslations('OurStory');
+
+    const milestones = [
+        { year: "2021", title: t('milestone_2021_title'), description: t('milestone_2021_desc') },
+        { year: "2022", title: t('milestone_2022_title'), description: t('milestone_2022_desc') },
+        { year: "2023", title: t('milestone_2023_title'), description: t('milestone_2023_desc') },
+        { year: "2024", title: t('milestone_2024_title'), description: t('milestone_2024_desc') },
+        { year: "2025", title: t('milestone_2025_title'), description: t('milestone_2025_desc') },
+        { year: "Futur", title: t('milestone_future_title'), description: t('milestone_future_desc') },
+    ];
+
     return (
         <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold text-slate-900 sm:text-4xl mb-4">
-                        Notre Histoire
+                        {t('title')}
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        De simples débuts à une révolution logistique.
+                        {t('description')}
                     </p>
                 </div>
 

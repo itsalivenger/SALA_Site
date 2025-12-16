@@ -1,7 +1,13 @@
-import Link from "next/link";
+"use client";
+
+import { Link } from '@/i18n/routing';
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+    const t = useTranslations('Footer');
+    const year = new Date().getFullYear();
+
     return (
         <footer className="bg-white border-t border-gray-200 pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +18,7 @@ export default function Footer() {
                             Sala
                         </Link>
                         <p className="text-gray-600 text-sm leading-relaxed">
-                            Votre partenaire de confiance pour les livraisons et le transport. Nous connectons le monde, un colis à la fois.
+                            {t('brand_desc')}
                         </p>
                         <div className="pt-2">
                             <div className="grid grid-cols-2 gap-3">
@@ -37,41 +43,41 @@ export default function Footer() {
 
                     {/* Links Col */}
                     <div>
-                        <h3 className="font-bold text-slate-900 mb-4">Entreprise</h3>
+                        <h3 className="font-bold text-slate-900 mb-4">{t('col_company')}</h3>
                         <ul className="space-y-2 text-sm text-gray-600">
-                            <li><Link href="/about" className="hover:text-primary transition-colors">À Propos</Link></li>
-                            <li><Link href="/careers" className="hover:text-primary transition-colors">Carrières</Link></li>
-                            <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
-                            <li><Link href="/press" className="hover:text-primary transition-colors">Presse</Link></li>
+                            <li><Link href="/about" className="hover:text-primary transition-colors">{t('link_about')}</Link></li>
+                            <li><Link href="/careers" className="hover:text-primary transition-colors">{t('link_careers')}</Link></li>
+                            <li><Link href="/blog" className="hover:text-primary transition-colors">{t('link_blog')}</Link></li>
+                            <li><Link href="/press" className="hover:text-primary transition-colors">{t('link_press')}</Link></li>
                         </ul>
                     </div>
 
                     {/* Support Col */}
                     <div>
-                        <h3 className="font-bold text-slate-900 mb-4">Support</h3>
+                        <h3 className="font-bold text-slate-900 mb-4">{t('col_support')}</h3>
                         <ul className="space-y-2 text-sm text-gray-600">
-                            <li><Link href="/contact" className="hover:text-primary transition-colors">Centre de Contact</Link></li>
-                            <li><Link href="/faq" className="hover:text-primary transition-colors">FAQs</Link></li>
-                            <li><Link href="/complaints" className="hover:text-primary transition-colors">Signaler un Problème</Link></li>
-                            <li><Link href="/terms" className="hover:text-primary transition-colors">Conditions d'Utilisation</Link></li>
-                            <li><Link href="/privacy" className="hover:text-primary transition-colors">Politique de Confidentialité</Link></li>
+                            <li><Link href="/contact" className="hover:text-primary transition-colors">{t('link_contact')}</Link></li>
+                            <li><Link href="/faq" className="hover:text-primary transition-colors">{t('link_faq')}</Link></li>
+                            <li><Link href="/complaints" className="hover:text-primary transition-colors">{t('link_complaints')}</Link></li>
+                            <li><Link href="/terms" className="hover:text-primary transition-colors">{t('link_terms')}</Link></li>
+                            <li><Link href="/privacy" className="hover:text-primary transition-colors">{t('link_privacy')}</Link></li>
                         </ul>
                     </div>
 
                     {/* Quick Links Col */}
                     <div>
-                        <h3 className="font-bold text-slate-900 mb-4">Liens Rapides</h3>
+                        <h3 className="font-bold text-slate-900 mb-4">{t('col_quick')}</h3>
                         <ul className="space-y-2 text-sm text-gray-600">
-                            <li><Link href="/download" className="hover:text-primary transition-colors">📱 Télécharger l'App</Link></li>
-                            <li><Link href="/services" className="hover:text-primary transition-colors">Nos Services</Link></li>
-                            <li><Link href="/about" className="hover:text-primary transition-colors">Qui Sommes-Nous</Link></li>
-                            <li><Link href="/faq" className="hover:text-primary transition-colors">Questions Fréquentes</Link></li>
+                            <li><Link href="/download" className="hover:text-primary transition-colors">{t('link_download')}</Link></li>
+                            <li><Link href="/services" className="hover:text-primary transition-colors">{t('link_services')}</Link></li>
+                            <li><Link href="/about" className="hover:text-primary transition-colors">{t('link_who_we_are')}</Link></li>
+                            <li><Link href="/faq" className="hover:text-primary transition-colors">{t('link_faq')}</Link></li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="border-t border-gray-100 pt-8 text-center text-sm text-gray-500">
-                    <p>&copy; {new Date().getFullYear()} Sala Company. Tous droits réservés.</p>
+                    <p>{t('copyright', { year })}</p>
                 </div>
             </div>
         </footer>

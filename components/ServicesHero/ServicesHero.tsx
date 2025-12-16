@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown, Package, Truck, Clock } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function ServicesHero() {
+    const t = useTranslations('ServicesHero');
+
     return (
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-900 text-white">
             {/* Background Pattern */}
@@ -20,17 +23,16 @@ export default function ServicesHero() {
                 >
                     <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary text-sm font-bold mb-8">
                         <Package className="w-4 h-4" />
-                        Solutions Complètes
+                        {t('badge')}
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-8">
-                        Une Solution pour <br />
-                        <span className="text-primary">Chaque Besoin</span>
+                        {t('title_part1')} <br />
+                        <span className="text-primary">{t('title_part2')}</span>
                     </h1>
 
                     <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-12">
-                        De la livraison express locale au transport de fret interurbain,
-                        Sala vous offre une gamme complète de services logistiques adaptés à vos exigences.
+                        {t('description')}
                     </p>
                 </motion.div>
 
@@ -42,9 +44,9 @@ export default function ServicesHero() {
                     className="flex flex-wrap justify-center gap-4 sm:gap-8"
                 >
                     {[
-                        { icon: Clock, label: "Express 1h" },
-                        { icon: Truck, label: "Fret Lourd" },
-                        { icon: Package, label: "B2B & B2C" },
+                        { icon: Clock, label: t('stat_1') },
+                        { icon: Truck, label: t('stat_2') },
+                        { icon: Package, label: t('stat_3') },
                     ].map((item, idx) => (
                         <div key={idx} className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
                             <item.icon className="w-5 h-5 text-primary" />

@@ -2,44 +2,47 @@
 
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
-
-// Expanded list for better grid visual
-const testimonials = [
-    {
-        name: "Sarah Ahmed",
-        role: "Cliente Régulière",
-        content: "Sala a complètement changé la façon dont j'envoie des cadeaux à ma famille. Rapide et sûr !",
-        rating: 5,
-        avatar: "https://ui-avatars.com/api/?name=Sarah+Ahmed&background=0D8ABC&color=fff",
-        featured: true
-    },
-    {
-        name: "Mohamed Ali",
-        role: "E-commerçant",
-        content: "Mes clients sont ravis de la livraison express. Sala est un partenaire clé pour ma croissance.",
-        rating: 5,
-        avatar: "https://ui-avatars.com/api/?name=Mohamed+Ali&background=random",
-        featured: false
-    },
-    {
-        name: "Amira K.",
-        role: "Étudiante",
-        content: "L'application est super intuitive. Je l'utilise pour mes trajets quotidiens.",
-        rating: 5,
-        avatar: "https://ui-avatars.com/api/?name=Amira+K&background=random",
-        featured: false
-    },
-    {
-        name: "Karim S.",
-        role: "Boutique Mode",
-        content: "Le service client est très réactif. Une solution fiable pour les pros.",
-        rating: 4,
-        avatar: "https://ui-avatars.com/api/?name=Karim+S&background=random",
-        featured: false
-    }
-];
+import { useTranslations } from "next-intl";
 
 export default function Testimonials() {
+    const t = useTranslations('Testimonials');
+
+    // Expanded list for better grid visual
+    const testimonials = [
+        {
+            name: "Sarah Ahmed",
+            role: t('review_1_role'),
+            content: t('review_1_content'),
+            rating: 5,
+            avatar: "https://ui-avatars.com/api/?name=Sarah+Ahmed&background=0D8ABC&color=fff",
+            featured: true
+        },
+        {
+            name: "Mohamed Ali",
+            role: t('review_2_role'),
+            content: t('review_2_content'),
+            rating: 5,
+            avatar: "https://ui-avatars.com/api/?name=Mohamed+Ali&background=random",
+            featured: false
+        },
+        {
+            name: "Amira K.",
+            role: t('review_3_role'),
+            content: t('review_3_content'),
+            rating: 5,
+            avatar: "https://ui-avatars.com/api/?name=Amira+K&background=random",
+            featured: false
+        },
+        {
+            name: "Karim S.",
+            role: t('review_4_role'),
+            content: t('review_4_content'),
+            rating: 4,
+            avatar: "https://ui-avatars.com/api/?name=Karim+S&background=random",
+            featured: false
+        }
+    ];
+
     return (
         <section className="py-24 relative overflow-hidden bg-slate-50">
             {/* Animated Gradient Background */}
@@ -60,25 +63,25 @@ export default function Testimonials() {
                     >
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary/20 text-primary text-sm font-bold shadow-sm mb-6">
                             <Star className="w-4 h-4 fill-primary" />
-                            Avis Clients
+                            {t('badge')}
                         </div>
                         <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
-                            Ils parlent de nous <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">mieux que personne.</span>
+                            {t('title_part1')} <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">{t('title_part2')}</span>
                         </h2>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                            Découvrez pourquoi des milliers d'utilisateurs et d'entreprises choisissent Sala pour leurs besoins quotidiens. Une satisfaction client au cœur de notre mission.
+                            {t('description')}
                         </p>
 
                         <div className="flex items-center gap-8">
                             <div>
                                 <p className="text-3xl font-bold text-slate-900">15k+</p>
-                                <p className="text-sm text-gray-500">Utilisateurs heureux</p>
+                                <p className="text-sm text-gray-500">{t('stats_users')}</p>
                             </div>
                             <div className="h-10 w-px bg-gray-200" />
                             <div>
                                 <p className="text-3xl font-bold text-slate-900">4.9/5</p>
-                                <p className="text-sm text-gray-500">Note moyenne</p>
+                                <p className="text-sm text-gray-500">{t('stats_rating')}</p>
                             </div>
                         </div>
                     </motion.div>

@@ -1,26 +1,29 @@
 "use client";
 
 import { Download, MousePointerClick, Smile } from "lucide-react";
-
-const steps = [
-    {
-        title: "Téléchargez l'App",
-        description: "Obtenez Sala pour Android ou iOS. Créez votre compte en quelques secondes.",
-        icon: Download,
-    },
-    {
-        title: "Passez votre commande",
-        description: "Choisissez votre service, définissez le lieu et confirmez les détails.",
-        icon: MousePointerClick,
-    },
-    {
-        title: "Détendez-vous",
-        description: "Suivez votre livraison ou votre chauffeur en temps réel jusqu'à la fin de la mission.",
-        icon: Smile,
-    },
-];
+import { useTranslations } from "next-intl";
 
 export default function HowItWorks() {
+    const t = useTranslations('HowItWorks');
+
+    const steps = [
+        {
+            title: t('step_1_title'),
+            description: t('step_1_desc'),
+            icon: Download,
+        },
+        {
+            title: t('step_2_title'),
+            description: t('step_2_desc'),
+            icon: MousePointerClick,
+        },
+        {
+            title: t('step_3_title'),
+            description: t('step_3_desc'),
+            icon: Smile,
+        },
+    ];
+
     return (
         <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
             {/* Background patterns */}
@@ -32,10 +35,10 @@ export default function HowItWorks() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold sm:text-4xl mb-4">
-                        Comment ça marche
+                        {t('title')}
                     </h2>
                     <p className="text-lg text-slate-300 max-w-2xl mx-auto">
-                        Des étapes simples pour avancer. Nous avons rendu cela aussi facile que 1-2-3.
+                        {t('description')}
                     </p>
                 </div>
 
@@ -63,4 +66,3 @@ export default function HowItWorks() {
         </section>
     );
 }
-

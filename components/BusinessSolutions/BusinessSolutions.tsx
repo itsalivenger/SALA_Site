@@ -2,26 +2,29 @@
 
 import { motion } from "framer-motion";
 import { Briefcase, BarChart3, Globe2, Building2 } from "lucide-react";
-
-const solutions = [
-    {
-        icon: Briefcase,
-        title: "Gestion de Flotte",
-        description: "Externalisez votre logistique. Nous gérons vos livraisons pendant que vous vous concentrez sur votre cœur de métier."
-    },
-    {
-        icon: Globe2,
-        title: "Compte Professionnel",
-        description: "Un espace dédié pour gérer toutes vos livraisons professionnelles en un seul endroit."
-    },
-    {
-        icon: BarChart3,
-        title: "Analytics Avancés",
-        description: "Accédez à des rapports détaillés sur vos performances de livraison et optimisez vos coûts."
-    }
-];
+import { useTranslations } from "next-intl";
 
 export default function BusinessSolutions() {
+    const t = useTranslations('BusinessSolutions');
+
+    const solutions = [
+        {
+            icon: Briefcase,
+            title: t('solution_1_title'),
+            description: t('solution_1_desc')
+        },
+        {
+            icon: Globe2,
+            title: t('solution_2_title'),
+            description: t('solution_2_desc')
+        },
+        {
+            icon: BarChart3,
+            title: t('solution_3_title'),
+            description: t('solution_3_desc')
+        }
+    ];
+
     return (
         <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
             {/* Background Decor */}
@@ -39,16 +42,16 @@ export default function BusinessSolutions() {
                     >
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary/80 text-sm font-semibold mb-6">
                             <Building2 className="w-4 h-4" />
-                            Sala Business
+                            {t('badge')}
                         </div>
                         <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
-                            Des solutions puissantes pour <span className="text-primary">les entreprises</span>
+                            {t('title_part1')} <span className="text-primary">{t('title_part2')}</span>
                         </h2>
                         <p className="text-slate-300 text-lg mb-8 leading-relaxed">
-                            Que vous soyez une petite boutique ou une grande entreprise, Sala vous offre les outils nécessaires pour passer à la vitesse supérieure.
+                            {t('description')}
                         </p>
                         <button className="px-8 py-4 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/25">
-                            Découvrir Sala Business
+                            {t('cta_button')}
                         </button>
                     </motion.div>
 
