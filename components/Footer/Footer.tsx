@@ -14,8 +14,12 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     {/* Brand Col */}
                     <div className="space-y-4">
-                        <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-sala-purple to-sala-green bg-clip-text text-transparent">
-                            Sala
+                        <Link href="/" className="inline-block">
+                            <img
+                                src="/candidate_logos/logo_sala.png"
+                                alt="Sala Logo"
+                                className="h-24 w-auto"
+                            />
                         </Link>
                         <p className="text-gray-600 text-sm leading-relaxed">
                             {t('brand_desc')}

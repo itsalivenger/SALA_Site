@@ -51,13 +51,12 @@ export default function Navbar() {
 
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center relative z-50">
-              <Link href="/" className="flex items-center gap-2 group">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sala-purple to-sala-purple/60 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-sala-purple/30 group-hover:scale-105 transition-transform duration-300">
-                  S
-                </div>
-                <span className={`text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 ${!scrolled && !isOpen ? 'md:text-white' : ''} transition-colors`}>
-                  Sala
-                </span>
+              <Link href="/" className="flex items-center group">
+                <img
+                  src="/candidate_logos/logo_sala.png"
+                  alt="Sala Logo"
+                  className="h-12 w-auto scale-150 group-hover:scale-[1.58] transition-transform duration-300"
+                />
               </Link>
             </div>
 
