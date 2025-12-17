@@ -52,7 +52,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center relative z-50">
               <Link href="/" className="flex items-center gap-2 group">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-primary/80 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-primary/30 group-hover:scale-105 transition-transform duration-300">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-sala-purple to-sala-purple/60 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-sala-purple/30 group-hover:scale-105 transition-transform duration-300">
                   S
                 </div>
                 <span className={`text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 ${!scrolled && !isOpen ? 'md:text-white' : ''} transition-colors`}>
@@ -69,10 +69,10 @@ export default function Navbar() {
                   href={link.href}
                   className="relative group px-5 py-2"
                 >
-                  <span className={`relative z-10 text-base font-semibold transition-colors duration-300 ${!scrolled ? "text-white group-hover:text-white" : "text-slate-600 group-hover:text-primary"}`}>
+                  <span className={`relative z-10 text-base font-semibold transition-colors duration-300 ${!scrolled ? "text-white group-hover:text-white" : "text-slate-600 group-hover:text-sala-purple"}`}>
                     {link.name}
                   </span>
-                  <span className={`absolute bottom-0 left-0 w-full h-0.5 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${!scrolled ? "bg-white" : "bg-primary"}`} />
+                  <span className={`absolute bottom-0 left-0 w-full h-0.5 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100 ${!scrolled ? "bg-white" : "bg-sala-purple"}`} />
                 </Link>
               ))}
             </div>
@@ -83,7 +83,7 @@ export default function Navbar() {
                 href="/download"
                 className={`group relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 ${!scrolled
                   ? "bg-white text-slate-900 hover:bg-gray-100"
-                  : "bg-slate-900 text-white hover:bg-slate-800 shadow-lg shadow-primary/20"
+                  : "bg-sala-orange text-white hover:bg-primary-action-hover shadow-lg shadow-sala-orange/20"
                   }`}
               >
                 <span>{t('download')}</span>
@@ -91,7 +91,7 @@ export default function Navbar() {
               </Link>
 
               <div className="relative group">
-                <button className={`flex items-center gap-1 font-semibold transition-colors ${!scrolled ? "text-white hover:text-white/80" : "text-gray-600 hover:text-primary"}`}>
+                <button className={`flex items-center gap-1 font-semibold transition-colors ${!scrolled ? "text-white hover:text-white/80" : "text-gray-600 hover:text-sala-purple"}`}>
                   <span className="uppercase">{locale}</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
@@ -99,21 +99,21 @@ export default function Navbar() {
                   <div className="bg-white rounded-xl shadow-xl border border-gray-100 py-2 overflow-hidden">
                     <button
                       onClick={() => handleLanguageChange('fr')}
-                      className={`w-full text-left px-4 py-2 text-sm transition-colors cursor-pointer flex justify-between items-center ${locale === 'fr' ? 'text-primary bg-primary/5 font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'}`}
+                      className={`w-full text-left px-4 py-2 text-sm transition-colors cursor-pointer flex justify-between items-center ${locale === 'fr' ? 'text-sala-purple bg-sala-purple/5 font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-sala-purple'}`}
                     >
                       Français
                       {locale === 'fr' && <Check className="w-3 h-3" />}
                     </button>
                     <button
                       onClick={() => handleLanguageChange('en')}
-                      className={`w-full text-left px-4 py-2 text-sm transition-colors cursor-pointer flex justify-between items-center ${locale === 'en' ? 'text-primary bg-primary/5 font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'}`}
+                      className={`w-full text-left px-4 py-2 text-sm transition-colors cursor-pointer flex justify-between items-center ${locale === 'en' ? 'text-sala-purple bg-sala-purple/5 font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-sala-purple'}`}
                     >
                       English
                       {locale === 'en' && <Check className="w-3 h-3" />}
                     </button>
                     <button
                       onClick={() => handleLanguageChange('ar')}
-                      className={`w-full text-right px-4 py-2 text-sm transition-colors cursor-pointer flex justify-between items-center font-arabic ${locale === 'ar' ? 'text-primary bg-primary/5 font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-primary'}`}
+                      className={`w-full text-right px-4 py-2 text-sm transition-colors cursor-pointer flex justify-between items-center font-arabic ${locale === 'ar' ? 'text-sala-purple bg-sala-purple/5 font-bold' : 'text-gray-700 hover:bg-gray-50 hover:text-sala-purple'}`}
                     >
                       {locale === 'ar' && <Check className="w-3 h-3" />}
                       العربية
@@ -157,7 +157,7 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="block text-3xl font-bold text-slate-900 hover:text-primary transition-colors py-2"
+                      className="block text-3xl font-bold text-slate-900 hover:text-sala-purple transition-colors py-2"
                     >
                       {link.name}
                     </Link>
@@ -170,9 +170,9 @@ export default function Navbar() {
                   transition={{ delay: 0.6 }}
                   className="flex gap-4 pt-4 border-t border-gray-100 mt-4"
                 >
-                  <button onClick={() => handleLanguageChange('fr')} className={`px-4 py-2 rounded-lg text-sm font-bold ${locale === 'fr' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-600'}`}>FR</button>
-                  <button onClick={() => handleLanguageChange('en')} className={`px-4 py-2 rounded-lg text-sm font-bold ${locale === 'en' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-600'}`}>EN</button>
-                  <button onClick={() => handleLanguageChange('ar')} className={`px-4 py-2 rounded-lg text-sm font-bold ${locale === 'ar' ? 'bg-primary text-white' : 'bg-gray-100 text-gray-600'}`}>AR</button>
+                  <button onClick={() => handleLanguageChange('fr')} className={`px-4 py-2 rounded-lg text-sm font-bold ${locale === 'fr' ? 'bg-sala-purple text-white' : 'bg-gray-100 text-gray-600'}`}>FR</button>
+                  <button onClick={() => handleLanguageChange('en')} className={`px-4 py-2 rounded-lg text-sm font-bold ${locale === 'en' ? 'bg-sala-purple text-white' : 'bg-gray-100 text-gray-600'}`}>EN</button>
+                  <button onClick={() => handleLanguageChange('ar')} className={`px-4 py-2 rounded-lg text-sm font-bold ${locale === 'ar' ? 'bg-sala-purple text-white' : 'bg-gray-100 text-gray-600'}`}>AR</button>
                 </motion.div>
 
                 <motion.div
@@ -184,7 +184,7 @@ export default function Navbar() {
                   <Link
                     href="/download"
                     onClick={() => setIsOpen(false)}
-                    className="flex w-full items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-slate-900 text-white font-bold text-lg shadow-xl shadow-blue-900/20"
+                    className="flex w-full items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-sala-orange text-white font-bold text-lg shadow-xl shadow-sala-orange/20"
                   >
                     <span>{t('download')}</span>
                     <ChevronRight className="w-5 h-5" />

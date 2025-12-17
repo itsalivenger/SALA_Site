@@ -9,7 +9,7 @@ export default function Hero() {
     const t = useTranslations('Hero');
 
     return (
-        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-b from-primary/5 to-white">
+        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-b from-sala-green/5 to-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
                     {/* Text Content */}
@@ -19,13 +19,13 @@ export default function Hero() {
                         transition={{ duration: 0.6 }}
                         className="text-center lg:text-left"
                     >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
-                            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sala-green/10 text-sala-green text-sm font-semibold mb-6">
+                            <span className="w-2 h-2 rounded-full bg-sala-green animate-pulse" />
                             {t('tag')}
                         </div>
 
                         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
-                            {t('title_part1')} <span className="text-primary">{t('title_part2')}</span> {t('title_part3')}
+                            {t('title_part1')} <span className="text-sala-purple">{t('title_part2')}</span> {t('title_part3')}
                         </h1>
 
                         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
@@ -35,14 +35,14 @@ export default function Hero() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <Link
                                 href="/download"
-                                className="inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all bg-slate-900 rounded-xl hover:bg-slate-800 hover:shadow-lg shadow-primary/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900"
+                                className="inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all bg-sala-orange rounded-xl hover:bg-primary-action-hover hover:shadow-lg shadow-sala-orange/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sala-orange"
                             >
                                 <Smartphone className="w-5 h-5 mr-2" />
                                 {t('download_client')}
                             </Link>
                             <Link
                                 href="/download"
-                                className="inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-slate-900 transition-all bg-white border-2 border-slate-200 rounded-xl hover:border-slate-300 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-200"
+                                className="inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-sala-purple transition-all bg-white border-2 border-sala-purple rounded-xl hover:border-sala-purple/80 hover:bg-sala-purple/5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sala-purple"
                             >
                                 {t('become_driver')}
                                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -74,8 +74,8 @@ export default function Hero() {
                     >
                         {/* Abstract Background Shapes */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl absolute -translate-y-12 translate-x-12" />
-                            <div className="w-[400px] h-[400px] bg-primary/10 rounded-full blur-3xl absolute translate-y-12 -translate-x-12" />
+                            <div className="w-[500px] h-[500px] bg-sala-green/10 rounded-full blur-3xl absolute -translate-y-12 translate-x-12" />
+                            <div className="w-[400px] h-[400px] bg-sala-green/10 rounded-full blur-3xl absolute translate-y-12 -translate-x-12" />
                         </div>
 
                         {/* Placeholder for App Mockups */}
@@ -89,7 +89,7 @@ export default function Hero() {
                                 {/* Mock content */}
                                 <div className="p-4 pt-12 space-y-4">
 
-                                    <div className="h-32 rounded-2xl bg-primary w-full shadow-lg" />
+                                    <div className="h-32 rounded-2xl bg-sala-green w-full shadow-lg" />
                                     <div className="grid grid-cols-2 gap-4">
                                         <div className="h-24 rounded-2xl bg-white shadow-sm border border-gray-100" />
                                         <div className="h-24 rounded-2xl bg-white shadow-sm border border-gray-100" />

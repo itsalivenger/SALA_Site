@@ -1,22 +1,61 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
+  /* === SALA BRAND COLORS === */
+  --sala-green: #7FC6A4;
+  --sala-orange: #F28C4D;
+  --sala-purple: #4B2D6B;
 
-  --text-black: #000000;
+  /* === NEUTRALS === */
+  --bg-main: #F5F5F5;
+  --bg-surface: #FFFFFF;
+  --text-main: #2E2E2E;
+  --text-muted: #6B6B6B;
+  --border-soft: #E3E3E3;
+
+  /* === SEMANTIC === */
+  --success: var(--sala-green);
+  --warning: #FFC857;
+  --error: #E5543D;
+
+  /* === INTERACTION === */
+  --primary-action: var(--sala-orange);
+  --primary-action-hover: #E07B3C;
+  --link-color: var(--sala-purple);
+
+  /* === LEGACY SUPPORT (backwards compatibility) === */
+  --primary: var(--sala-green);
+  --background: var(--bg-surface);
+  --foreground: var(--text-main);
+  --text-black: var(--text-main);
   --text-white: #ffffff;
-
-  --primary: #1289ff;
-  /* blue-600 */
 }
 
 @theme inline {
+  /* Base colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-text-black: var(--text-black);
   --color-text-white: var(--text-white);
+
+  /* SALA Brand Colors */
+  --color-sala-green: var(--sala-green);
+  --color-sala-orange: var(--sala-orange);
+  --color-sala-purple: var(--sala-purple);
+
+  /* Semantic Colors */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  /* Interaction Colors */
+  --color-primary-action: var(--primary-action);
+  --color-link: var(--link-color);
+
+  /* Legacy Support */
   --color-primary: var(--primary);
+
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
