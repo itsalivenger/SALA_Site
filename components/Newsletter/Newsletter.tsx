@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { Send, CheckCircle, Mail, Sparkles } from "lucide-react";
 import { usePopup } from "@/context/PopupContext";
+import { useTranslations } from "next-intl";
 
 export default function Newsletter() {
+    const t = useTranslations('Newsletter');
     const [email, setEmail] = useState("");
     const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
     const { showPopup } = usePopup();
@@ -33,16 +35,16 @@ export default function Newsletter() {
             if (data.exists) {
                 showPopup({
                     type: "warning",
-                    title: "Déjà Abonné",
-                    message: data.message || "Vous êtes déjà inscrit à notre newsletter.",
+                    title: t('popup_already_subscribed_title'),
+                    message: t('popup_already_subscribed_message'),
                 });
             }
             // Handle Success case
             else {
                 showPopup({
                     type: "success",
-                    title: "Inscription Réussie!",
-                    message: data.message || "Vous êtes maintenant inscrit à notre newsletter.",
+                    title: t('popup_success_title'),
+                    message: t('popup_success_message'),
                 });
             }
 
@@ -52,8 +54,8 @@ export default function Newsletter() {
             // Error Popup
             showPopup({
                 type: "error",
-                title: "Échec de l'inscription",
-                message: error.message || "Une erreur s'est produite. Veuillez réessayer.",
+                title: t('popup_error_title'),
+                message: t('popup_error_message'),
             });
         } finally {
             setStatus("idle");
@@ -78,26 +80,26 @@ export default function Newsletter() {
                     <div className="text-center lg:text-left">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold mb-6">
                             <Sparkles className="w-4 h-4" />
-                            Restez Connecté
+                            {t('badge')}
                         </div>
 
                         <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
-                            Ne manquez rien de{" "}
+                            {t('title_part1')}{" "}
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">
-                                l'actualité Sala
+                                {t('title_part2')}
                             </span>
                         </h2>
 
                         <p className="text-lg text-slate-300 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                            Recevez en avant-première nos nouvelles fonctionnalités, offres exclusives et conseils pour optimiser vos livraisons.
+                            {t('description')}
                         </p>
 
                         {/* Benefits List */}
                         <div className="hidden lg:flex flex-col gap-3 text-slate-300">
                             {[
-                                "🎁 Offres exclusives réservées aux abonnés",
-                                "⚡ Accès anticipé aux nouvelles fonctionnalités",
-                                "📊 Conseils et astuces pour optimiser vos livraisons"
+                                t('benefit_1'),
+                                t('benefit_2'),
+                                t('benefit_3')
                             ].map((benefit, idx) => (
                                 <div key={idx} className="flex items-center gap-3">
                                     <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -118,22 +120,22 @@ export default function Newsletter() {
                                     <Mail className="w-6 h-6 text-white" />
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-white">Newsletter Sala</h3>
-                                    <p className="text-sm text-slate-400">Rejoignez 10k+ abonnés</p>
+                                    <h3 className="text-xl font-bold text-white">{t('form_title')}</h3>
+                                    <p className="text-sm text-slate-400">{t('form_subtitle')}</p>
                                 </div>
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-4">
                                 <div>
                                     <label htmlFor="newsletter-email" className="block text-sm font-semibold text-slate-300 mb-2">
-                                        Adresse email
+                                        {t('label_email')}
                                     </label>
                                     <input
                                         id="newsletter-email"
                                         type="email"
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
-                                        placeholder="votre@email.com"
+                                        placeholder={t('placeholder_email')}
                                         disabled={status === "loading" || status === "success"}
                                         className="w-full px-5 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/50 text-white placeholder:text-slate-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                                         required
@@ -148,18 +150,18 @@ export default function Newsletter() {
                                     {status === "loading" ? (
                                         <>
                                             <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                            <span>Inscription en cours...</span>
+                                            <span>{t('button_loading')}</span>
                                         </>
                                     ) : (
                                         <>
-                                            <span>S'abonner gratuitement</span>
+                                            <span>{t('button_submit')}</span>
                                             <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                         </>
                                     )}
                                 </button>
 
                                 <p className="text-xs text-slate-400 text-center">
-                                    En vous inscrivant, vous acceptez de recevoir nos emails. Désinscription possible à tout moment.
+                                    {t('disclaimer')}
                                 </p>
                             </form>
                         </div>

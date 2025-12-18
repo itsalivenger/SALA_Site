@@ -21,7 +21,7 @@ export default function ComplaintsHero() {
                     transition={{ duration: 0.6 }}
                 >
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">
-                        {t('title_part1')} <span className="text-red-500">{t('title_part2')}</span>
+                        {t('title_part1')} <span className="text-primary">{t('title_part2')}</span>
                     </h1>
                     <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
                         {t('description')}
