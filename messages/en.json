@@ -51,14 +51,28 @@
         "stat_4_label": "Client Rating"
     },
     "HowItWorks": {
-        "title": "How It Works",
-        "description": "Simple steps to move forward. We made it as easy as 1-2-3.",
+        "title": "How it works",
+        "description": "Simple steps to get moving. We've made it as easy as 1-2-3.",
         "step_1_title": "Download the App",
         "step_1_desc": "Get Sala for Android or iOS. Create your account in seconds.",
-        "step_2_title": "Place Your Order",
-        "step_2_desc": "Choose your service, set the location, and confirm details.",
+        "step_2_title": "Place your order",
+        "step_2_desc": "Choose your service, set the location and confirm the details.",
         "step_3_title": "Relax",
-        "step_3_desc": "Track your delivery or driver in real-time until the mission ends."
+        "step_3_desc": "Track your delivery or driver in real time until the mission is complete."
+    },
+    "ZigZagFeatures": {
+        "feature_1_title": "Smart Pricing",
+        "feature_1_desc": "Benefit from transparent algorithms that guarantee fair and competitive prices for every ride and delivery, with no hidden costs.",
+        "feature_1_cta": "Learn more",
+        "feature_2_title": "Verified Deliverers",
+        "feature_2_desc": "Safety first. Every Sala partner goes through a rigorous verification process to ensure total peace of mind.",
+        "feature_2_cta": "Security charter",
+        "feature_3_title": "Live Tracking",
+        "feature_3_desc": "Keep an eye on what matters. Track your orders or rides in real time with pinpoint GPS accuracy.",
+        "feature_3_cta": "Watch demo",
+        "feature_4_title": "Wallet & Refunds",
+        "feature_4_desc": "Manage your transactions effortlessly. Pay securely and benefit from a fair and instant refund policy when needed.",
+        "feature_4_cta": "Manage account"
     },
     "Testimonials": {
         "badge": "Client Reviews",

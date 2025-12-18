@@ -25,11 +25,18 @@ export default function HowItWorks() {
     ];
 
     return (
-        <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-            {/* Background patterns */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-                <div className="absolute right-0 top-0 w-96 h-96 bg-primary rounded-full blur-[100px]" />
-                <div className="absolute left-0 bottom-0 w-96 h-96 bg-indigo-500 rounded-full blur-[100px]" />
+        <section className="py-24 relative overflow-hidden bg-slate-900">
+            {/* Background Image & Overlays */}
+            <div className="absolute inset-0 z-0">
+                <img
+                    src="/images/comment_ca_marche_section.jpg"
+                    alt=""
+                    className="w-full h-full object-cover"
+                />
+                {/* Charcoal Overlay (Institutional) */}
+                <div className="absolute inset-0 bg-[#0a0a0b]/80" />
+                {/* Subtle Brand Gradient (Matches Hero) */}
+                <div className="absolute inset-0 bg-gradient-to-br from-sala-green/10 via-transparent to-sala-purple/10 mix-blend-overlay" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -49,14 +56,14 @@ export default function HowItWorks() {
 
                     {steps.map((step, index) => (
                         <div key={index} className="text-center relative">
-                            <div className="w-24 h-24 mx-auto bg-slate-800 rounded-full flex items-center justify-center border-4 border-slate-900 mb-6 shadow-xl relative z-10">
-                                <step.icon className="w-10 h-10 text-blue-400" />
-                                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-sm font-bold">
+                            <div className="w-24 h-24 mx-auto bg-slate-900/50 backdrop-blur-md rounded-full flex items-center justify-center border-4 border-white/10 mb-6 shadow-2xl relative z-10 group hover:border-sala-green/50 transition-colors">
+                                <step.icon className="w-10 h-10 text-white group-hover:text-sala-green transition-colors" />
+                                <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-sala-orange flex items-center justify-center text-sm font-black text-white shadow-lg">
                                     {index + 1}
                                 </div>
                             </div>
-                            <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                            <p className="text-slate-300 leading-relaxed px-4">
+                            <h3 className="text-xl font-black text-white mb-3">{step.title}</h3>
+                            <p className="text-slate-300 leading-relaxed px-4 font-medium">
                                 {step.description}
                             </p>
                         </div>

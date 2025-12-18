@@ -60,6 +60,20 @@
         "step_3_title": "Détendez-vous",
         "step_3_desc": "Suivez votre livraison ou votre chauffeur en temps réel jusqu'à la fin de la mission."
     },
+    "ZigZagFeatures": {
+        "feature_1_title": "Tarification Intelligente",
+        "feature_1_desc": "Profitez d'algorithmes transparents qui garantissent des prix justes et compétitifs pour chaque trajet et livraison, sans frais cachés.",
+        "feature_1_cta": "En savoir plus",
+        "feature_2_title": "Livreurs Vérifiés",
+        "feature_2_desc": "La sécurité d'abord. Chaque partenaire Sala passe par un processus de vérification rigoureux pour vous garantir une tranquillité d'esprit totale.",
+        "feature_2_cta": "Notre charte sécurité",
+        "feature_3_title": "Suivi en Direct",
+        "feature_3_desc": "Gardez un œil sur ce qui compte. Suivez vos commandes ou vos trajets en temps réel avec une précision GPS millimétrée.",
+        "feature_3_cta": "Voir la démo",
+        "feature_4_title": "Portefeuille & Remboursements",
+        "feature_4_desc": "Gérez vos transactions sans effort. Payez en toute sécurité et profitez d'une politique de remboursement juste et instantanée en cas de besoin.",
+        "feature_4_cta": "Gérer mon compte"
+    },
     "Testimonials": {
         "badge": "Avis Clients",
         "title_part1": "Ils parlent de nous",
