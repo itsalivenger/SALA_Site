@@ -10,18 +10,30 @@ export default function Hero() {
 
     return (
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-900">
-            {/* Background Video */}
-            <div className="absolute inset-0 z-0">
+            {/* Layered Background Background */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+                {/* 1. Video Layer */}
                 <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover opacity-40 grayscale-[20%]"
+                    className="w-full h-full object-cover motion-reduce:hidden"
                 >
                     <source src="/videos/hero.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900" />
+
+                {/* Fallback/Poster for reduced motion */}
+                <div className="absolute inset-0 bg-slate-900 hidden motion-reduce:block" />
+
+                {/* 2. Dark Neutral Overlay (Charcoal/Institutional) */}
+                <div className="absolute inset-0 bg-[#0a0a0b]/50 transition-opacity" />
+
+                {/* 3. Brand Gradient Overlay (Subtle) */}
+                <div className="absolute inset-0 bg-gradient-to-br from-sala-green/20 via-transparent to-sala-purple/20 mix-blend-overlay pointer-events-none" />
+
+                {/* 4. Bottom Fade for Page Integration */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/40" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -86,14 +98,8 @@ export default function Hero() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="relative lg:h-[600px] flex items-center justify-center pt-12"
                     >
-                        {/* Abstract Background Shapes */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-[500px] h-[500px] bg-sala-green/10 rounded-full blur-3xl absolute -translate-y-12 translate-x-12" />
-                            <div className="w-[400px] h-[400px] bg-sala-green/5 rounded-full blur-3xl absolute translate-y-12 -translate-x-12" />
-                        </div>
-
                         {/* App Mockup */}
-                        <div className="relative z-10 w-full max-w-sm lg:max-w-md bg-white rounded-[2.5rem] shadow-2xl border-8 border-slate-800 overflow-hidden aspect-[9/19] mx-auto mt-12 rotate-[-6deg] hover:rotate-0 transition-transform duration-500 shadow-black/40">
+                        <div className="relative z-10 w-full max-w-sm lg:max-w-md bg-white rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.6)] border-8 border-slate-800 overflow-hidden aspect-[9/19] mx-auto mt-12 rotate-[-6deg] hover:rotate-0 transition-transform duration-500">
                             {/* Screen Content */}
                             <div className="h-full w-full bg-white relative flex flex-col">
                                 <div className="h-8 bg-slate-800 w-full absolute top-0 left-0 z-20 flex justify-center items-end pb-1">
