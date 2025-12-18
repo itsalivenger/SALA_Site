@@ -81,245 +81,211 @@ export default function SettingsPage() {
     }
 
     return (
-        <div className="space-y-8 max-w-5xl mx-auto pb-12">
-
+        <div className="max-w-5xl mx-auto pb-20">
             {/* Page Header */}
-            <div>
-                <h1 className="text-3xl font-bold text-[var(--foreground)] tracking-tight">Paramètres</h1>
-                <p className="text-[var(--foreground)]/60 mt-1">Gérez la configuration globale de votre application.</p>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+                <div>
+                    <h1 className="text-4xl font-black text-slate-900 tracking-tight">Paramètres Globaux</h1>
+                    <p className="text-slate-500 mt-2 text-lg">Gérez l'identité et les configurations de votre plateforme Sala.</p>
+                </div>
+                {/* Submit Action (Desktop) */}
+                <div className="hidden md:block">
+                    <SubmitButton isSaving={isSaving} />
+                </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-8">
+                {/* Main Settings Container */}
+                <div className="bg-white rounded-[2.5rem] border border-gray-100 shadow-2xl overflow-hidden shadow-black/5">
 
-                {/* 1. Contact Info */}
-                <div className="bg-[var(--background)] p-6 sm:p-8 rounded-2xl border border-[var(--foreground)]/10 shadow-sm space-y-6">
-                    <div className="space-y-1 pb-4 border-b border-[var(--foreground)]/5">
-                        <div className="flex items-center gap-3">
-                            <div className="p-2 bg-blue-500/10 rounded-lg">
-                                <MapPin className="w-5 h-5 text-blue-500" />
-                            </div>
-                            <h2 className="text-lg font-bold text-[var(--foreground)]">Contact</h2>
-                        </div>
-                        <p className="text-sm" style={{ color: 'var(--text-black)' }}>Numéro de téléphone et adresse du siège affichés aux clients.</p>
-                    </div>
+                    {/* 1. Contact Info Section */}
+                    <div className="p-8 md:p-12 space-y-10">
+                        <SectionHeader
+                            icon={MapPin}
+                            title="Informations de Contact"
+                            subtitle="Ces données sont affichées sur la page contact et le footer."
+                            iconColor="text-blue-500"
+                            bgColor="bg-blue-500/10"
+                        />
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-[var(--foreground)]/70">Numéro de téléphone</label>
-                            <div className="relative">
-                                <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--foreground)]/30" />
-                                <input
-                                    type="text"
-                                    value={formData.companyPhone}
-                                    onChange={e => setFormData({ ...formData, companyPhone: e.target.value })}
-                                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)]"
-                                    placeholder="+212 6..."
-                                />
-                            </div>
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-[var(--foreground)]/70">Adresse du siège</label>
-                            <input
-                                type="text"
-                                value={formData.companyAddress}
-                                onChange={e => setFormData({ ...formData, companyAddress: e.target.value })}
-                                className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)]"
-                                placeholder="Casablanca, Maroc"
+                        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+                            <InputField
+                                label="Numéro de téléphone"
+                                icon={Phone}
+                                value={formData.companyPhone}
+                                onChange={(v: string) => setFormData({ ...formData, companyPhone: v })}
+                                placeholder="+212 6..."
                             />
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-[var(--foreground)]/70">Email de contact</label>
-                            <div className="relative">
-                                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--foreground)]/30 invisible" />
-                                <input
-                                    type="email"
-                                    value={formData.companyEmail}
-                                    onChange={e => setFormData({ ...formData, companyEmail: e.target.value })}
-                                    className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)]"
-                                    placeholder="contact@sala.ma"
+                            <InputField
+                                label="Email de contact"
+                                icon={MapPin}
+                                type="email"
+                                value={formData.companyEmail}
+                                onChange={(v: string) => setFormData({ ...formData, companyEmail: v })}
+                                placeholder="contact@sala.ma"
+                            />
+                            <div className="md:col-span-2">
+                                <InputField
+                                    label="Adresse du siège"
+                                    value={formData.companyAddress}
+                                    onChange={(v: string) => setFormData({ ...formData, companyAddress: v })}
+                                    placeholder="Casablanca, Maroc"
                                 />
                             </div>
                         </div>
                     </div>
-                </div>
 
-                {/* 2. Social Media Links */}
-                <div className="bg-[var(--background)] p-6 sm:p-8 rounded-2xl border border-[var(--foreground)]/10 shadow-sm space-y-6">
-                    <div className="space-y-1 pb-4 border-b border-[var(--foreground)]/5">
-                        <div className="flex items-center gap-3">
-                            <div className="p-2 bg-pink-500/10 rounded-lg">
-                                <Share2 className="w-5 h-5 text-pink-500" />
-                            </div>
-                            <h2 className="text-lg font-bold text-[var(--foreground)]">Réseaux Sociaux</h2>
+                    <Divider />
+
+                    {/* 2. Social Media Section */}
+                    <div className="p-8 md:p-12 space-y-10">
+                        <SectionHeader
+                            icon={Share2}
+                            title="Réseaux Sociaux"
+                            subtitle="Connectez vos comptes officiels pour augmenter votre visibilité."
+                            iconColor="text-pink-500"
+                            bgColor="bg-pink-500/10"
+                        />
+
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <InputField label="Facebook" value={formData.facebookUrl} onChange={(v: string) => setFormData({ ...formData, facebookUrl: v })} placeholder="facebook.com/..." />
+                            <InputField label="Instagram" value={formData.instagramUrl} onChange={(v: string) => setFormData({ ...formData, instagramUrl: v })} placeholder="instagram.com/..." />
+                            <InputField label="X (Twitter)" value={formData.twitterUrl} onChange={(v: string) => setFormData({ ...formData, twitterUrl: v })} placeholder="x.com/..." />
+                            <InputField label="TikTok" value={formData.tiktokUrl} onChange={(v: string) => setFormData({ ...formData, tiktokUrl: v })} placeholder="tiktok.com/@..." />
                         </div>
-                        <p className="text-sm" style={{ color: 'var(--text-black)' }}>Liens vers vos pages officielles sur les réseaux sociaux.</p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-[var(--foreground)]/70">Facebook</label>
-                            <input
-                                type="url"
-                                value={formData.facebookUrl}
-                                onChange={e => setFormData({ ...formData, facebookUrl: e.target.value })}
-                                className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)]"
-                                placeholder="facebook.com/page"
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-[var(--foreground)]/70">Instagram</label>
-                            <input
-                                type="url"
-                                value={formData.instagramUrl}
-                                onChange={e => setFormData({ ...formData, instagramUrl: e.target.value })}
-                                className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)]"
-                                placeholder="instagram.com/page"
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-[var(--foreground)]/70">X (Twitter)</label>
-                            <input
-                                type="url"
-                                value={formData.twitterUrl}
-                                onChange={e => setFormData({ ...formData, twitterUrl: e.target.value })}
-                                className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)]"
-                                placeholder="x.com/username"
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-[var(--foreground)]/70">TikTok</label>
-                            <input
-                                type="url"
-                                value={formData.tiktokUrl}
-                                onChange={e => setFormData({ ...formData, tiktokUrl: e.target.value })}
-                                className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)]"
-                                placeholder="tiktok.com/@user"
-                            />
+                    <Divider />
+
+                    {/* 3. App Links Section */}
+                    <div className="p-8 md:p-12 space-y-10">
+                        <SectionHeader
+                            icon={Smartphone}
+                            title="Liens des Boutiques d'Apps"
+                            subtitle="Mettez à jour les liens vers vos applications mobiles."
+                            iconColor="text-green-500"
+                            bgColor="bg-green-500/10"
+                        />
+
+                        <div className="grid md:grid-cols-2 gap-8">
+                            <InputField label="Google Play Store" value={formData.androidAppUrl} onChange={(v: string) => setFormData({ ...formData, androidAppUrl: v })} placeholder="Link to Play Store" />
+                            <InputField label="Apple App Store" value={formData.iosAppUrl} onChange={(v: string) => setFormData({ ...formData, iosAppUrl: v })} placeholder="Link to App Store" />
                         </div>
                     </div>
-                </div>
 
+                    <Divider />
 
-                {/* 3. App Links */}
-                <div className="bg-[var(--background)] p-6 sm:p-8 rounded-2xl border border-[var(--foreground)]/10 shadow-sm space-y-6">
-                    <div className="space-y-1 pb-4 border-b border-[var(--foreground)]/5">
-                        <div className="flex items-center gap-3">
-                            <div className="p-2 bg-green-500/10 rounded-lg">
-                                <Smartphone className="w-5 h-5 text-green-500" />
-                            </div>
-                            <h2 className="text-lg font-bold text-[var(--foreground)]">Liens Applications</h2>
-                        </div>
-                        <p className="text-sm" style={{ color: 'var(--text-black)' }}>Liens de téléchargement de votre application mobile.</p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-[var(--foreground)]/70">Google Play</label>
-                            <input
-                                type="url"
-                                value={formData.androidAppUrl}
-                                onChange={e => setFormData({ ...formData, androidAppUrl: e.target.value })}
-                                className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)]"
-                                placeholder="Play Store Link"
+                    {/* 5. Danger Zone */}
+                    <div className="p-8 md:p-12 bg-red-500/[0.02]">
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+                            <SectionHeader
+                                icon={ShieldAlert}
+                                title="Mode Maintenance"
+                                subtitle="Activez cette option pour rendre l'application inaccessible temporairement."
+                                iconColor="text-red-500"
+                                bgColor="bg-red-500/10"
                             />
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-[var(--foreground)]/70">App Store</label>
-                            <input
-                                type="url"
-                                value={formData.iosAppUrl}
-                                onChange={e => setFormData({ ...formData, iosAppUrl: e.target.value })}
-                                className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)]"
-                                placeholder="App Store Link"
-                            />
+                            <label className="relative inline-flex items-center cursor-pointer scale-125 md:scale-100">
+                                <input
+                                    type="checkbox"
+                                    className="sr-only peer"
+                                    checked={formData.maintenanceMode}
+                                    onChange={e => setFormData({ ...formData, maintenanceMode: e.target.checked })}
+                                />
+                                <div className="w-14 h-7 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
+                            </label>
                         </div>
                     </div>
                 </div>
 
-                {/* 4. Configuration & Rules */}
-                <div className="bg-[var(--background)] p-6 sm:p-8 rounded-2xl border border-[var(--foreground)]/10 shadow-sm space-y-6">
-                    <div className="space-y-1 pb-4 border-b border-[var(--foreground)]/5">
-                        <div className="flex items-center gap-3">
-                            <div className="p-2 bg-yellow-500/10 rounded-lg">
-                                <ShoppingBag className="w-5 h-5 text-yellow-500" />
-                            </div>
-                            <h2 className="text-lg font-bold text-[var(--foreground)]">Configuration Commande</h2>
-                        </div>
-                        <p className="text-sm" style={{ color: 'var(--text-black)' }}>Définissez les frais de livraison et le montant minimum de commande.</p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-[var(--foreground)]/70">Frais de livraison ({formData.currency})</label>
-                            <input
-                                type="number"
-                                min="0"
-                                value={formData.deliveryFee}
-                                onChange={e => setFormData({ ...formData, deliveryFee: parseFloat(e.target.value) || 0 })}
-                                className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                            />
-                        </div>
-                        <div className="space-y-2">
-                            <label className="text-sm font-medium text-[var(--foreground)]/70">Commande Minimum ({formData.currency})</label>
-                            <input
-                                type="number"
-                                min="0"
-                                value={formData.minOrderAmount}
-                                onChange={e => setFormData({ ...formData, minOrderAmount: parseFloat(e.target.value) || 0 })}
-                                className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)] [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                            />
-                        </div>
-                    </div>
+                {/* Mobile Submit Button */}
+                <div className="md:hidden pt-4">
+                    <SubmitButton isSaving={isSaving} fullWidth />
                 </div>
-
-                {/* 5. Danger Zone / Advanced */}
-                <div className="bg-red-500/5 p-6 sm:p-8 rounded-2xl border border-red-500/10 space-y-6">
-                    <div className="flex items-center gap-3 pb-4 border-b border-red-500/10">
-                        <div className="p-2 bg-red-500/10 rounded-lg">
-                            <ShieldAlert className="w-5 h-5 text-red-600" />
-                        </div>
-                        <h2 className="text-lg font-bold text-red-900 dark:text-red-200">Zone de Danger</h2>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                        <div>
-                            <h3 className="font-medium text-[var(--foreground)]">Mode Maintenance</h3>
-                            <p className="text-sm text-[var(--foreground)]/60">Activez cette option pour rendre l'application inaccessible aux utilisateurs temporairement.</p>
-                        </div>
-                        <label className="relative inline-flex items-center cursor-pointer">
-                            <input
-                                type="checkbox"
-                                className="sr-only peer"
-                                checked={formData.maintenanceMode}
-                                onChange={e => setFormData({ ...formData, maintenanceMode: e.target.checked })}
-                            />
-                            <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-300 dark:peer-focus:ring-red-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-red-600"></div>
-                        </label>
-                    </div>
-                </div>
-
-                {/* Submit Action */}
-                <div className="flex justify-end pt-4">
-                    <button
-                        type="submit"
-                        disabled={isSaving}
-                        className="px-8 py-3 bg-[var(--primary)] text-white rounded-xl font-bold shadow-lg shadow-[var(--primary)]/25 hover:bg-[var(--primary)]/90 active:scale-95 transition-all flex items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
-                    >
-                        {isSaving ? (
-                            <>
-                                <Loader2 className="w-5 h-5 animate-spin" />
-                                Enregistrement...
-                            </>
-                        ) : (
-                            <>
-                                <Save className="w-5 h-5" />
-                                Sauvegarder les modifications
-                            </>
-                        )}
-                    </button>
-                </div>
-
             </form>
         </div>
+    );
+}
+
+// --- Helper Components ---
+
+interface SectionHeaderProps {
+    icon: any;
+    title: string;
+    subtitle: string;
+    iconColor: string;
+    bgColor: string;
+}
+
+function SectionHeader({ icon: Icon, title, subtitle, iconColor, bgColor }: SectionHeaderProps) {
+    return (
+        <div className="space-y-2">
+            <div className="flex items-center gap-4">
+                <div className={`p-3 ${bgColor} rounded-2xl`}>
+                    <Icon className={`w-6 h-6 ${iconColor}`} />
+                </div>
+                <h2 className="text-2xl font-bold text-slate-900">{title}</h2>
+            </div>
+            <p className="text-slate-500 ml-16 max-w-2xl">{subtitle}</p>
+        </div>
+    );
+}
+
+interface InputFieldProps {
+    label: string;
+    icon?: any;
+    type?: string;
+    value: string;
+    onChange: (v: string) => void;
+    placeholder?: string;
+}
+
+function InputField({ label, icon: Icon, type = "text", value, onChange, placeholder }: InputFieldProps) {
+    return (
+        <div className="space-y-3">
+            <label className="text-sm font-bold text-slate-500 uppercase tracking-wider ml-1">{label}</label>
+            <div className="relative group">
+                {Icon && (
+                    <Icon className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-[var(--primary)] transition-colors" />
+                )}
+                <input
+                    type={type}
+                    value={value}
+                    onChange={e => onChange(e.target.value)}
+                    placeholder={placeholder}
+                    className={`w-full ${Icon ? 'pl-12' : 'px-5'} py-3 rounded-2xl bg-slate-50/30 border-2 border-slate-400 focus:bg-white focus:border-[var(--primary)] focus:shadow-xl focus:shadow-[var(--primary)]/10 focus:outline-none transition-all text-slate-900 font-medium placeholder:text-slate-400`}
+                />
+            </div>
+        </div>
+    );
+}
+
+function Divider() {
+    return (
+        <div className="px-12">
+            <div className="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent w-full" />
+        </div>
+    );
+}
+
+function SubmitButton({ isSaving, fullWidth }: { isSaving: boolean, fullWidth?: boolean }) {
+    return (
+        <button
+            type="submit"
+            disabled={isSaving}
+            className={`${fullWidth ? 'w-full' : ''} px-10 py-4 bg-[var(--primary)] text-white rounded-[1.25rem] font-black text-lg shadow-2xl shadow-[var(--primary)]/30 hover:shadow-[var(--primary)]/40 hover:-translate-y-1 active:translate-y-0 active:scale-95 transition-all flex items-center justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed`}
+        >
+            {isSaving ? (
+                <>
+                    <Loader2 className="w-6 h-6 animate-spin" />
+                    Traitement...
+                </>
+            ) : (
+                <>
+                    <Save className="w-6 h-6" />
+                    Enregistrer
+                </>
+            )}
+        </button>
     );
 }
