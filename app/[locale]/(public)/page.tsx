@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero/Hero";
-import ServicesPreview from "@/components/ServicesPreview/ServicesPreview";
+import ModularGrid from "@/components/ModularGrid/ModularGrid";
 import ZigZagFeatures from "@/components/ZigZagFeatures/ZigZagFeatures";
 import AppShowcase from "@/components/AppShowcase/AppShowcase";
 import Stats from "@/components/Stats/Stats";
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       <Hero />
-      <ServicesPreview />
+      <ModularGrid />
       <ZigZagFeatures />
       <AppShowcase />
       <Stats />

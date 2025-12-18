@@ -32,6 +32,16 @@
         "feature_3_title": "Paiements fluides",
         "feature_3_desc": "Payez en espèces ou par carte en toute sécurité."
     },
+    "ModularGrid": {
+        "card_1_title": "Tarification Claire",
+        "card_1_desc": "Algorithmes de prix justes, sans surprises ni frais cachés.",
+        "card_2_title": "Vérification KYC",
+        "card_2_desc": "Partenaires certifiés pour une sécurité maximale à chaque étape.",
+        "card_3_title": "Livraison Express",
+        "card_3_desc": "Logistique optimisée pour des délais records et un suivi total.",
+        "card_4_title": "Portefeuille Sala",
+        "card_4_desc": "Gérez vos paiements et remboursements en un clin d'œil."
+    },
     "ServicesPreview": {
         "title": "Nos Services De Base",
         "description": "Tout ce dont vous avez besoin, livré avec soin. Nous comblons le fossé entre efficacité et fiabilité.",

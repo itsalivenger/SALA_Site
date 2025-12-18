@@ -32,6 +32,16 @@
         "feature_3_title": "Seamless Payments",
         "feature_3_desc": "Pay safely with cash or card."
     },
+    "ModularGrid": {
+        "card_1_title": "Clear Pricing",
+        "card_1_desc": "Fair pricing algorithms, no surprises or hidden fees.",
+        "card_2_title": "KYC Verification",
+        "card_2_desc": "Certified partners for maximum security at every step.",
+        "card_3_title": "Express Delivery",
+        "card_3_desc": "Optimized logistics for record times and total tracking.",
+        "card_4_title": "Sala Wallet",
+        "card_4_desc": "Manage your payments and refunds in an instant."
+    },
     "ServicesPreview": {
         "title": "Our Core Services",
         "description": "Everything you need, delivered with care. We bridge the gap between efficiency and reliability.",
