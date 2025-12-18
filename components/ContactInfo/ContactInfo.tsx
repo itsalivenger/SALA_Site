@@ -1,10 +1,19 @@
 "use client";
 
-import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin, Globe } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useSettings } from "@/context/SettingsContext";
 
 export default function ContactInfo() {
     const t = useTranslations('ContactInfo');
+    const { settings } = useSettings();
+
+    const socialLinks = [
+        { name: 'Facebook', icon: Facebook, url: settings.facebookUrl, color: 'hover:text-primary hover:border-primary/20' },
+        { name: 'Twitter', icon: Twitter, url: settings.twitterUrl, color: 'hover:text-sky-500 hover:border-sky-200' },
+        { name: 'Instagram', icon: Instagram, url: settings.instagramUrl, color: 'hover:text-pink-600 hover:border-pink-200' },
+        { name: 'TikTok', icon: Globe, url: settings.tiktokUrl, color: 'hover:text-primary hover:border-primary/20' }
+    ].filter(link => link.url && link.url !== '#');
 
     return (
         <div className="bg-slate-50 p-8 rounded-3xl border border-gray-100 h-full">
@@ -18,9 +27,7 @@ export default function ContactInfo() {
                     <div>
                         <h4 className="font-bold text-slate-900 mb-1">{t('office_title')}</h4>
                         <p className="text-gray-600 leading-relaxed">
-                            {t('office_address_1')}<br />
-                            {t('office_address_2')}<br />
-                            {t('office_address_3')}
+                            {settings.companyAddress || t('office_address_1')}
                         </p>
                     </div>
                 </div>
@@ -32,7 +39,7 @@ export default function ContactInfo() {
                     <div>
                         <h4 className="font-bold text-slate-900 mb-1">{t('phone_title')}</h4>
                         <p className="text-gray-600">
-                            <span className="block mb-1">+212 522 123 456</span>
+                            <span className="block mb-1">{settings.companyPhone || "+212 522 123 456"}</span>
                             <span className="text-sm text-gray-500">{t('phone_subtitle')}</span>
                         </p>
                     </div>
@@ -45,32 +52,30 @@ export default function ContactInfo() {
                     <div>
                         <h4 className="font-bold text-slate-900 mb-1">{t('email_title')}</h4>
                         <p className="text-gray-600">
-                            contact@sala.ma<br />
-                            support@sala.ma
+                            {settings.companyEmail || "contact@sala.ma"}
                         </p>
                     </div>
                 </div>
 
-                <div className="pt-8 border-t border-gray-200">
-                    <h4 className="font-bold text-slate-900 mb-6">{t('follow_us')}</h4>
-                    <div className="grid grid-cols-2 gap-3">
-                        {[
-                            { name: 'Facebook', icon: Facebook, color: 'hover:text-primary hover:border-primary/20' },
-                            { name: 'Twitter', icon: Twitter, color: 'hover:text-sky-500 hover:border-sky-200' },
-                            { name: 'Instagram', icon: Instagram, color: 'hover:text-pink-600 hover:border-pink-200' },
-                            { name: 'LinkedIn', icon: Linkedin, color: 'hover:text-primary hover:border-primary/20' }
-                        ].map((social) => (
-                            <a
-                                key={social.name}
-                                href="#"
-                                className={`bg-white border-2 border-gray-200 ${social.color} px-4 py-3 rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 group`}
-                            >
-                                <social.icon className="w-5 h-5 text-gray-600 group-hover:scale-110 transition-transform" />
-                                <span className="font-semibold text-sm text-slate-900">{social.name}</span>
-                            </a>
-                        ))}
+                {socialLinks.length > 0 && (
+                    <div className="pt-8 border-t border-gray-200">
+                        <h4 className="font-bold text-slate-900 mb-6">{t('follow_us')}</h4>
+                        <div className="grid grid-cols-2 gap-3">
+                            {socialLinks.map((social) => (
+                                <a
+                                    key={social.name}
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`bg-white border-2 border-gray-200 ${social.color} px-4 py-3 rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 group`}
+                                >
+                                    <social.icon className="w-5 h-5 text-gray-600 group-hover:scale-110 transition-transform" />
+                                    <span className="font-semibold text-sm text-slate-900">{social.name}</span>
+                                </a>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
         </div>
     );

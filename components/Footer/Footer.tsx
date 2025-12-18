@@ -1,12 +1,21 @@
 "use client";
 
 import { Link } from '@/i18n/routing';
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Globe } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useSettings } from "@/context/SettingsContext";
 
 export default function Footer() {
     const t = useTranslations('Footer');
+    const { settings } = useSettings();
     const year = new Date().getFullYear();
+
+    const socialLinks = [
+        { name: 'Facebook', icon: Facebook, url: settings.facebookUrl, color: 'hover:text-sala-green hover:border-sala-green/20' },
+        { name: 'Twitter', icon: Twitter, url: settings.twitterUrl, color: 'hover:text-sky-500 hover:border-sky-200' },
+        { name: 'Instagram', icon: Instagram, url: settings.instagramUrl, color: 'hover:text-pink-600 hover:border-pink-200' },
+        { name: 'TikTok', icon: Globe, url: settings.tiktokUrl, color: 'hover:text-sala-green hover:border-sala-green/20' }
+    ].filter(link => link.url && link.url !== '#');
 
     return (
         <footer className="bg-white border-t border-gray-200 pt-16 pb-8">
@@ -24,25 +33,24 @@ export default function Footer() {
                         <p className="text-gray-600 text-sm leading-relaxed">
                             {t('brand_desc')}
                         </p>
-                        <div className="pt-2">
-                            <div className="grid grid-cols-2 gap-3">
-                                {[
-                                    { name: 'Facebook', icon: Facebook, color: 'hover:text-sala-green hover:border-sala-green/20' },
-                                    { name: 'Twitter', icon: Twitter, color: 'hover:text-sky-500 hover:border-sky-200' },
-                                    { name: 'Instagram', icon: Instagram, color: 'hover:text-pink-600 hover:border-pink-200' },
-                                    { name: 'LinkedIn', icon: Linkedin, color: 'hover:text-sala-green hover:border-sala-green/20' }
-                                ].map((social) => (
-                                    <a
-                                        key={social.name}
-                                        href="#"
-                                        className={`bg-white border-2 border-gray-200 ${social.color} px-3 py-2 rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 group`}
-                                    >
-                                        <social.icon className="w-4 h-4 text-gray-600 group-hover:scale-110 transition-transform" />
-                                        <span className="font-semibold text-xs text-slate-900">{social.name}</span>
-                                    </a>
-                                ))}
+                        {socialLinks.length > 0 && (
+                            <div className="pt-2">
+                                <div className="grid grid-cols-2 gap-3">
+                                    {socialLinks.map((social) => (
+                                        <a
+                                            key={social.name}
+                                            href={social.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={`bg-white border-2 border-gray-200 ${social.color} px-3 py-2 rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 group`}
+                                        >
+                                            <social.icon className="w-4 h-4 text-gray-600 group-hover:scale-110 transition-transform" />
+                                            <span className="font-semibold text-xs text-slate-900">{social.name}</span>
+                                        </a>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
 
                     {/* Links Col */}

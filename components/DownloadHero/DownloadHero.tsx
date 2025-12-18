@@ -3,9 +3,11 @@
 import { motion } from "framer-motion";
 import { Download, Apple, Smartphone } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useSettings } from "@/context/SettingsContext";
 
 export default function DownloadHero() {
     const t = useTranslations('DownloadHero');
+    const { settings } = useSettings();
 
     return (
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-900 text-white">
@@ -30,20 +32,30 @@ export default function DownloadHero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button className="flex items-center justify-center gap-3 px-6 py-4 bg-white text-slate-900 rounded-xl font-bold hover:bg-gray-100 transition-colors">
+                        <a
+                            href={settings.iosAppUrl || "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-3 px-6 py-4 bg-white text-slate-900 rounded-xl font-bold hover:bg-gray-100 transition-colors"
+                        >
                             <Apple className="w-8 h-8" />
                             <div className="text-left">
                                 <div className="text-xs text-gray-500">{t('download_on')}</div>
                                 <div className="text-lg leading-none">App Store</div>
                             </div>
-                        </button>
-                        <button className="flex items-center justify-center gap-3 px-6 py-4 bg-transparent border border-slate-600 text-white rounded-xl font-bold hover:bg-slate-800 transition-colors">
+                        </a>
+                        <a
+                            href={settings.androidAppUrl || "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center gap-3 px-6 py-4 bg-transparent border border-slate-600 text-white rounded-xl font-bold hover:bg-slate-800 transition-colors"
+                        >
                             <Smartphone className="w-8 h-8" />
                             <div className="text-left">
                                 <div className="text-xs text-slate-400">{t('available_on')}</div>
                                 <div className="text-lg leading-none">Google Play</div>
                             </div>
-                        </button>
+                        </a>
                     </div>
                 </motion.div>
             </div>

@@ -15,6 +15,7 @@ export default function SettingsPage() {
     const [formData, setFormData] = useState({
         companyAddress: "",
         companyPhone: "",
+        companyEmail: "",
         facebookUrl: "",
         instagramUrl: "",
         twitterUrl: "",
@@ -125,6 +126,19 @@ export default function SettingsPage() {
                                 className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)]"
                                 placeholder="Casablanca, Maroc"
                             />
+                        </div>
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium text-[var(--foreground)]/70">Email de contact</label>
+                            <div className="relative">
+                                <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--foreground)]/30 invisible" />
+                                <input
+                                    type="email"
+                                    value={formData.companyEmail}
+                                    onChange={e => setFormData({ ...formData, companyEmail: e.target.value })}
+                                    className="w-full px-4 py-2.5 rounded-xl bg-[var(--foreground)]/5 border border-[var(--foreground)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 text-[var(--foreground)]"
+                                    placeholder="contact@sala.ma"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -2,9 +2,11 @@
 
 import { MapPin } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { useSettings } from "@/context/SettingsContext";
 
 export default function ContactMap() {
     const t = useTranslations('ContactMap');
+    const { settings } = useSettings();
 
     return (
         <div className="w-full">
@@ -33,7 +35,7 @@ export default function ContactMap() {
                     </div>
                     <div>
                         <p className="font-bold text-slate-900 text-sm">{t('badge_title')}</p>
-                        <p className="text-xs text-gray-500">{t('badge_subtitle')}</p>
+                        <p className="text-xs text-gray-500">{settings.companyAddress || t('badge_subtitle')}</p>
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import mongoose, { Schema, Document, models, model } from 'mongoose';
 export interface ISettings extends Document {
     companyAddress: string;
     companyPhone: string;
+    companyEmail: string;
     facebookUrl: string;
     instagramUrl: string;
     twitterUrl: string;
@@ -23,6 +24,10 @@ const SettingsSchema = new Schema(
             default: '',
         },
         companyPhone: {
+            type: String,
+            default: '',
+        },
+        companyEmail: {
             type: String,
             default: '',
         },
